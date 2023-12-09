@@ -6,7 +6,14 @@ import { GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
 
 import { UiBurgerIconComponent, UiBurgerIconCloseComponent } from '@c4c/ui';
 import { RouteDataService } from '@c4c/services';
-import { AppState, loggedIn, photoUrl, name, email } from '@c4c/state';
+import {
+  AppState,
+  selectRouteDataUrl,
+  loggedIn,
+  photoUrl,
+  name,
+  email,
+} from '@c4c/state';
 
 @Component({
   selector: 'app-landing-navigation',
@@ -22,7 +29,7 @@ import { AppState, loggedIn, photoUrl, name, email } from '@c4c/state';
   styleUrls: ['./landing-navigation.component.scss'],
 })
 export class LandingNavigationComponent {
-  url$ = this.routeDataService.url$;
+  url$ = this.store.select(selectRouteDataUrl);
   loggedIn$ = this.store.select(loggedIn);
   photoUrl$ = this.store.select(photoUrl);
   name$ = this.store.select(name);

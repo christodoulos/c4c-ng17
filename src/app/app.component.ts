@@ -1,10 +1,12 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { Store } from '@ngrx/store';
 
 import { NavigationComponent } from '@c4c/components';
 import { FooterComponent } from '@c4c/pages';
 import { RouteDataService, AuthService } from '@c4c/services';
+import { AppState, selectShowNavigation, selectShowFooter } from '@c4c/state';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +18,7 @@ import { RouteDataService, AuthService } from '@c4c/services';
 export class AppComponent {
   authService = inject(AuthService);
   routeDataService = inject(RouteDataService);
-  showNavigation$ = this.routeDataService.showNavigation$;
-  showFooter$ = this.routeDataService.showFooter$;
+  store = inject(Store<AppState>);
+  showNavigation$ = this.store.select(selectShowNavigation);
+  showFooter$ = this.store.select(selectShowFooter);
 }
