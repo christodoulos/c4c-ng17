@@ -4,7 +4,7 @@ import { RouterOutlet } from '@angular/router';
 
 import { NavigationComponent } from '@c4c/components';
 import { FooterComponent } from '@c4c/pages';
-import { RouteDataService } from '@c4c/services';
+import { RouteDataService, AuthService } from '@c4c/services';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +14,7 @@ import { RouteDataService } from '@c4c/services';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
+  authService = inject(AuthService);
   routeDataService = inject(RouteDataService);
   showNavigation$ = this.routeDataService.showNavigation$;
   showFooter$ = this.routeDataService.showFooter$;

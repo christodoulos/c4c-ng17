@@ -16,9 +16,11 @@ export class RouteDataService {
 
   showNavigation = new BehaviorSubject<boolean>(false);
   showFooter = new BehaviorSubject<boolean>(false);
+  url = new BehaviorSubject<string>('');
 
   showNavigation$ = this.showNavigation.asObservable();
   showFooter$ = this.showFooter.asObservable();
+  url$ = this.url.asObservable();
 
   rendererFactory = inject(RendererFactory2);
   renderer = this.rendererFactory.createRenderer(null, null);
@@ -28,6 +30,7 @@ export class RouteDataService {
       .pipe(filter((event) => event instanceof NavigationStart))
       .subscribe((event) => {
         const evt = event as NavigationStart;
+        this.url.next(evt.url);
         this.showNavigation.next(!this.notShowNavigation.includes(evt.url));
         this.showFooter.next(!this.notShowFooter.includes(evt.url));
 
