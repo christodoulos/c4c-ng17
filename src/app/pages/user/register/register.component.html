@@ -1,0 +1,53 @@
+<main class="container flex flex-1 my-36">
+  <div class="max-w-[800px] mx-auto self-center w-full">
+      <div class="mb-24 text-center">
+          <h2 class="mb-5">Create your Free Account</h2>
+      </div>
+      
+      <form [formGroup]="fmrRegister" (ngSubmit)="register()">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" formControlName="email" id="email" class="block peer" placeholder="Enter Email"/>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" formControlName="password" id="password" class="block peer" placeholder="Enter Password"/>
+        </div>
+
+        <div class="form-group">
+          <label for="passwordConfirm">Confirm Password</label>
+          <input type="password" formControlName="password_confirm" id="passwordConfirm" class="block peer" placeholder="Confirm Password"/>
+        </div>
+
+        <div class="form-group">
+          <label for="firstname">Firstname</label>
+          <input type="text" formControlName="firstname" id="firstname" class="block peer" placeholder="Enter Firstname"/>
+        </div>
+
+        <div class="form-group">
+          <label for="lastname">Lastname</label>
+          <input type="text" formControlName="lastname" id="lastname" class="block peer" placeholder="Enter Lastname"/>
+        </div>
+
+        <div class="form-group" formGroupName="role">
+          <label for="type">Category</label>
+          <select formControlName="type" id="type">
+            <option value="" selected disabled>Choose Category</option>
+            <option value="learner">Learner</option>
+            <option value="instructor">Instructor</option>
+            <option value="Institution">Institution</option>
+          </select>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-between gap-3">
+          <button type="submit" class="button button-primary">
+            Submit
+            <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8.40381 15.5987L7.06787 14.2862L12.3179 9.03619H0.903809V7.16119H12.3179L7.06787 1.91119L8.40381 0.598694L15.9038 8.09869L8.40381 15.5987Z" />
+            </svg>
+          </button>
+        </div>
+      </form>
+  </div>
+</main>

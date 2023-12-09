@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "exercise": "Pyrhon 1",
+    "type": "Python",
+    "time": "10min",
+    "hints": "2/3",
+    "tries": "2",
+    "evaluation": "3"
+  },
+  {
+    "id": 2,
+    "exercise": "Pyrhon 3",
+    "type": "Python",
+    "time": "10min",
+    "hints": "1/3",
+    "tries": "1",
+    "evaluation": "2"
+  },
+  {
+    "id": 3,
+    "exercise": "Pyrhon 4",
+    "type": "Python",
+    "time": "25min",
+    "hints": "3/3",
+    "tries": "4",
+    "evaluation": "4"
+  },
+  {
+    "id": 4,
+    "exercise": "Pyrhon 10",
+    "type": "Python",
+    "time": "15min",
+    "hints": "1/3",
+    "tries": "1",
+    "evaluation": "3"
+  },
+  {
+    "id": 5,
+    "exercise": "Pyrhon 11",
+    "type": "Python",
+    "time": "20min",
+    "hints": "3/4",
+    "tries": "4",
+    "evaluation": "4"
+  },
+  {
+    "id": 6,
+    "exercise": "Pyrhon 12",
+    "type": "Python",
+    "time": "10min",
+    "hints": "2/3",
+    "tries": "2",
+    "evaluation": "3"
+  },
+  {
+    "id": 7,
+    "exercise": "Pyrhon 15",
+    "type": "Python",
+    "time": "5min",
+    "hints": "2/3",
+    "tries": "3",
+    "evaluation": "2"
+  },
+  {
+    "id": 8,
+    "exercise": "Pyrhon 20",
+    "type": "Python",
+    "time": "20min",
+    "hints": "3/3",
+    "tries": "3",
+    "evaluation": "4"
+  },
+  {
+    "id": 9,
+    "exercise": "Pyrhon 21",
+    "type": "Python",
+    "time": "10min",
+    "hints": "2/3",
+    "tries": "2",
+    "evaluation": "3"
+  },
+  {
+    "id": 10,
+    "exercise": "Pyrhon 22",
+    "type": "Python",
+    "time": "10min",
+    "hints": "2/3",
+    "tries": "2",
+    "evaluation": "3"
+  }
+]

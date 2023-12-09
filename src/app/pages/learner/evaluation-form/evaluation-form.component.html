@@ -1,0 +1,30 @@
+<main class="container flex flex-1 my-36">
+  <div class="max-w-[800px] mx-auto self-center w-full">
+    <h1 class="mb-24 text-3xl font-bold text-center">
+      Evaluation
+    </h1>
+    
+    <form action="">
+      <label for="type">Language type</label>
+      <input class="block peer" type="text" id="type" name="type" value="Python" disabled />
+
+      <label for="id_password">Exercise description</label>
+      <textarea rows="10" cols="20" disabled>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero voluptatum id praesentium tempora similique maiores facilis nam obcaecati, aspernatur ut voluptas enim vitae. Obcaecati error animi dolor, minus eum amet?
+      </textarea>
+
+
+      <label for="evalution">Evaluation ({{ evaluation.value }})</label>
+      <input type="range" #evaluation (input)="evaluation.value" id="evaluation" min="0" max="5">
+
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <button type="submit" class="button button-primary">
+          Submit
+          <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.40381 15.5987L7.06787 14.2862L12.3179 9.03619H0.903809V7.16119H12.3179L7.06787 1.91119L8.40381 0.598694L15.9038 8.09869L8.40381 15.5987Z" />
+          </svg>
+        </button>
+      </div>
+    </form>
+  </div>
+</main>

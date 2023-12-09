@@ -1,0 +1,40 @@
+<app-landing-navigation></app-landing-navigation>
+<main class="relative overflow-hidden py-36 md:min-h-screen md:flex md:flex-col md:items-center md:justify-center">
+  <div class="absolute inset-0 -z-[100] w-full h-full bg-no-repeat bg-cover bg-center" style="background-image: url(assets/gradients/learn-js-python-gradient.svg)"></div>
+  
+  <section>
+      <div class="container">
+          <div class="text-center">
+              <h1 class="max-w-[700px] mx-auto">Learn <br> Javascript + Python</h1>
+              <p class="max-w-[570px] mx-auto">Hello {{profile$?.firstname}}, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus.</p>
+          </div>
+
+          <div class="grid grid-cols-1 text-center mt-14 md:grid-cols-2 gap-7">
+              <a class="group flex flex-col items-center justify-center px-8 lg:px-20 py-12 min-h-[270px] transition border-[2px] border-white border-solid rounded-xl hover:border-custom-blue" (click)="check_language('javascript')">
+                  <h4 class="transition group-hover:text-custom-blue">Javascript</h4>
+                  <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus.</p>
+              </a>
+              <a class="group flex flex-col items-center justify-center px-8 lg:px-20 py-12 min-h-[270px] transition border-[2px] border-white border-solid rounded-xl hover:border-custom-blue" (click)="check_language('python')">
+                  <h4 class="transition group-hover:text-custom-blue">Python</h4>
+                  <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus.</p>
+              </a>
+          </div>
+
+          <div class="mt-8 text-center">
+              <a href="" class="button button-outline button-video group">
+                  <div class="absolute inset-0 -z-[10] invisible opacity-0 transition-all group-hover:visible group-hover:opacity-100">
+                      <div class="relative h-full overflow-hidden">
+                          <video class="absolute object-cover w-full h-full -z-[10]" muted playsinline autoplay loop>
+                              <source src="./assets/videos/button.mp4" type="video/mp4">
+                          </video>
+                      </div>
+                  </div>
+                  Try the demo
+                  <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M8.40381 15.5987L7.06787 14.2862L12.3179 9.03619H0.903809V7.16119H12.3179L7.06787 1.91119L8.40381 0.598694L15.9038 8.09869L8.40381 15.5987Z" />
+                  </svg>
+              </a>
+          </div>
+      </div>
+  </section>
+</main>
