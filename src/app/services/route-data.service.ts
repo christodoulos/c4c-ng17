@@ -36,10 +36,11 @@ export class RouteDataService {
           this.renderer.addClass(document.body, 'bg-custom-gray-900');
         } else {
           this.renderer.removeClass(document.body, 'bg-custom-gray-900');
-          this.renderer.addClass(
-            document.body,
-            'flex flex-col min-h-screen bg-custom-gray-800'
-          );
+          this.renderer.addClass(document.body, 'flex');
+          this.renderer.addClass(document.body, 'flex-col');
+          this.renderer.addClass(document.body, 'min-h-screen');
+          this.renderer.addClass(document.body, 'bg-custom-gray-800');
+
           const nav = document.getElementsByTagName('nav')[0];
           this.renderer.removeClass(nav, 'page-header');
           this.renderer.addClass(nav, 'shadow-custom-shadow');
