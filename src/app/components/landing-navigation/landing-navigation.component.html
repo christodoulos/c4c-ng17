@@ -35,8 +35,13 @@
     </div>
 
     <div class="items-center hidden gap-4 lg:inline-flex">
+      <a
+        class="transition hover:text-custom-green cursor-pointer"
+        routerLink="/home/pricing"
+        >Pricing</a
+      >
       @if(!(loggedIn$ | async)) {
-      <asl-google-signin-button type="icon" size="large">
+      <asl-google-signin-button type="standard" size="large">
       </asl-google-signin-button>
       } @else {
       <div class="relative group items-center flex space-x-2">
@@ -48,21 +53,6 @@
         <div>{{ name$ | async }}</div>
       </div>
       }
-      <a
-        class="transition hover:text-custom-green cursor-pointer"
-        routerLink="/user/login"
-        >Login</a
-      >
-      <a
-        class="transition hover:text-custom-green cursor-pointer"
-        routerLink="/user/register"
-        >SignUp</a
-      >
-      <a
-        class="transition hover:text-custom-green cursor-pointer"
-        routerLink="/home/pricing"
-        >Pricing</a
-      >
     </div>
 
     <!-- Burger Icon -->
