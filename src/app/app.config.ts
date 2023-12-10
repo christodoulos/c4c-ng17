@@ -11,7 +11,12 @@ import { provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { provideEffects } from '@ngrx/effects';
 
-import { authReducer, routeDataReducer, setRouteDataEffect } from '@c4c/state';
+import {
+  authReducer,
+  routeDataReducer,
+  setRouteDataEffect,
+  loginEffect,
+} from '@c4c/state';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -36,6 +41,6 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(withFetch()),
     provideStore({ auth: authReducer, routeData: routeDataReducer }),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
-    provideEffects([{ setRouteDataEffect }]),
+    provideEffects([{ setRouteDataEffect, loginEffect }]),
   ],
 };

@@ -36,7 +36,7 @@ const notShowNavigation = [
 ];
 const notShowFooter = ['/home', '/'];
 
-export const selectRouteData = (state: AppState) => state;
+export const selectRouteData = (state: AppState) => state.routeData;
 
 export const selectRouteDataUrl = (state: AppState) => state.routeData.url;
 

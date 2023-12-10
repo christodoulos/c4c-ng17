@@ -12,8 +12,8 @@ export class RouteDataService {
     this.router.events
       .pipe(filter((event) => event instanceof NavigationStart))
       .subscribe((event) => {
-        const evt = event as NavigationStart;
-        this.store.dispatch(setRouteData({ url: evt.url }));
+        const url = (event as NavigationStart).url;
+        this.store.dispatch(setRouteData({ url }));
       });
   }
 }
