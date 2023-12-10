@@ -5,8 +5,13 @@ import { Store } from '@ngrx/store';
 
 import { NavigationComponent } from '@c4c/components';
 import { FooterComponent } from '@c4c/pages';
-import { RouteDataService, AuthService } from '@c4c/services';
-import { AppState, selectShowNavigation, selectShowFooter } from '@c4c/state';
+import { AuthService } from '@c4c/services';
+import {
+  AppState,
+  selectShowNavigation,
+  selectShowFooter,
+  RouteDataService,
+} from '@c4c/state';
 
 @Component({
   selector: 'app-root',

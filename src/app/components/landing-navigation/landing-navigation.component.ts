@@ -1,11 +1,10 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Route, RouterLink } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
 
 import { UiBurgerIconComponent, UiBurgerIconCloseComponent } from '@c4c/ui';
-import { RouteDataService } from '@c4c/services';
 import {
   AppState,
   selectRouteDataUrl,
@@ -29,13 +28,10 @@ import {
   styleUrls: ['./landing-navigation.component.scss'],
 })
 export class LandingNavigationComponent {
+  store = inject(Store<AppState>);
   url$ = this.store.select(selectRouteDataUrl);
   loggedIn$ = this.store.select(loggedIn);
   photoUrl$ = this.store.select(photoUrl);
   name$ = this.store.select(name);
   email$ = this.store.select(email);
-  constructor(
-    private routeDataService: RouteDataService,
-    private store: Store<AppState>
-  ) {}
 }

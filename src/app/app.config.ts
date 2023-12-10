@@ -1,10 +1,19 @@
-import { ApplicationConfig, isDevMode } from '@angular/core';
+import {
+  ApplicationConfig,
+  isDevMode,
+  importProvidersFrom,
+} from '@angular/core';
 import { provideRouter } from '@angular/router';
-import { provideHttpClient, withFetch } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withFetch,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 import {
   GoogleLoginProvider,
   SocialAuthServiceConfig,
 } from '@abacritt/angularx-social-login';
+import { JwtModule } from '@auth0/angular-jwt';
 
 import { routes } from './app.routes';
 import { provideStore } from '@ngrx/store';
@@ -17,6 +26,10 @@ import {
   setRouteDataEffect,
   loginEffect,
 } from '@c4c/state';
+
+export function tokenGetter() {
+  return localStorage.getItem('access_token');
+}
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -38,7 +51,14 @@ export const appConfig: ApplicationConfig = {
         },
       } as SocialAuthServiceConfig,
     },
-    provideHttpClient(withFetch()),
+    importProvidersFrom(
+      JwtModule.forRoot({
+        config: {
+          tokenGetter: tokenGetter,
+        },
+      })
+    ),
+    provideHttpClient(withFetch(), withInterceptorsFromDi()),
     provideStore({ auth: authReducer, routeData: routeDataReducer }),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
     provideEffects([{ setRouteDataEffect, loginEffect }]),

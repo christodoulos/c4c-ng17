@@ -1,16 +1,9 @@
 import { SocialUser } from '@abacritt/angularx-social-login';
-import {
-  createAction,
-  props,
-  createReducer,
-  on,
-  createSelector,
-} from '@ngrx/store';
+import { createAction, props, createReducer, on } from '@ngrx/store';
 import { AppState } from '@c4c/state';
-import { state } from '@angular/animations';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { inject } from '@angular/core';
-import { map, switchMap, tap } from 'rxjs';
+import { map, switchMap, take, tap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 // Auth State
@@ -69,20 +62,16 @@ export const loginEffect = createEffect(
       ofType(login),
       tap((action) => console.log(action)),
       map((action) => action.user.idToken),
-      map((idToken) => {
-        console.log(idToken);
+      switchMap((idToken) =>
         http
-          .post<string>('http://localhost:6789/api/auth/google-login', {
-            idToken,
-          })
-          .pipe(
-            map((res) => {
-              console.log(res);
-              return res;
-            })
+          .post<{ access_token: string }>(
+            'http://localhost:6789/api/auth/google-login',
+            { idToken }
           )
-          .subscribe();
-      })
+          .pipe(
+            tap((res) => localStorage.setItem('access_token', res.access_token))
+          )
+      )
     );
   },
   { dispatch: false, functional: true }

@@ -15,15 +15,6 @@ export class AuthService {
   constructor() {
     this.socialAuthService.authState.subscribe((user) => {
       if (user) {
-        // console.log(user);
-        const { idToken } = user;
-        // this.http
-        //   .post('https://backend.atticadt.uwmh.eu/api/auth/google-login', {
-        //     idToken,
-        //   })
-        //   .subscribe((res) => {
-        //     console.log(res);
-        //   });
         this.store.dispatch(login({ user }));
       }
     });

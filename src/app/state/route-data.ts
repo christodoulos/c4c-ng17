@@ -1,8 +1,9 @@
-import { Inject, Injectable, RendererFactory2, inject } from '@angular/core';
-import { createAction, props, on, createReducer } from '@ngrx/store';
-import { AppState } from '@c4c/state';
+import { Injectable, RendererFactory2, inject } from '@angular/core';
+import { NavigationStart, Router } from '@angular/router';
+import { createAction, props, on, createReducer, Store } from '@ngrx/store';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { map, tap } from 'rxjs';
+import { filter, map, tap } from 'rxjs';
+import { AppState } from '@c4c/state';
 
 export interface RouteDataState {
   url: string;
@@ -74,3 +75,17 @@ export const setRouteDataEffect = createEffect(
   },
   { dispatch: false, functional: true }
 );
+
+@Injectable({
+  providedIn: 'root',
+})
+export class RouteDataService {
+  constructor(private router: Router, private store: Store<AppState>) {
+    this.router.events
+      .pipe(filter((event) => event instanceof NavigationStart))
+      .subscribe((event) => {
+        const url = (event as NavigationStart).url;
+        this.store.dispatch(setRouteData({ url }));
+      });
+  }
+}
