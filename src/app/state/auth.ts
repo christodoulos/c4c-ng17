@@ -1,9 +1,9 @@
 import { SocialUser } from '@abacritt/angularx-social-login';
-import { createAction, props, createReducer, on } from '@ngrx/store';
+import { createAction, props, createReducer, on, Store } from '@ngrx/store';
 import { AppState } from '@c4c/state';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { inject } from '@angular/core';
-import { map, switchMap, take, tap } from 'rxjs';
+import { catchError, map, of, switchMap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 // Auth State
@@ -28,6 +28,11 @@ export const login = createAction(
 export const loginSuccess = createAction(
   '[Auth] Login Success',
   props<{ user: SocialUser }>()
+);
+
+export const loginFailure = createAction(
+  '[Auth] Login Failure',
+  props<{ error: string }>()
 );
 
 export const logout = createAction('[Auth] Logout');
@@ -57,21 +62,30 @@ export const photoUrl = (state: AppState) => state.auth.user?.photoUrl;
 // Auth Effects
 
 export const loginEffect = createEffect(
-  (actions$ = inject(Actions), http = inject(HttpClient)) => {
+  (
+    actions$ = inject(Actions),
+    http = inject(HttpClient),
+    store = inject(Store<AppState>)
+  ) => {
     return actions$.pipe(
       ofType(login),
-      map((action) => action.user.idToken),
-      switchMap((idToken) =>
+      switchMap((action) =>
         http
           .post<{ access_token: string }>(
             'http://localhost:6789/api/auth/google-login',
-            { idToken }
+            { idToken: action.user.idToken }
           )
           .pipe(
-            tap((res) => localStorage.setItem('access_token', res.access_token))
+            map((res) => {
+              localStorage.setItem('access_token', res.access_token);
+              return loginSuccess({ user: action.user });
+            }),
+            catchError(() =>
+              of(loginFailure({ error: 'Google login failure' }))
+            )
           )
       )
     );
   },
-  { dispatch: false, functional: true }
+  { functional: true }
 );
