@@ -60,7 +60,6 @@ export const loginEffect = createEffect(
   (actions$ = inject(Actions), http = inject(HttpClient)) => {
     return actions$.pipe(
       ofType(login),
-      tap((action) => console.log(action)),
       map((action) => action.user.idToken),
       switchMap((idToken) =>
         http
