@@ -1,0 +1,508 @@
+[
+  {
+    "id": 1,
+    "question":"How do you create a function in JavaScript?",
+    "answers": [
+      {
+        "text": "function myFunction()",
+        "correct": true
+      },
+      {
+        "text": "function = myFunction()",
+        "correct": false
+      },
+      {
+        "text": "function:myFunction()",
+        "correct": false
+      }
+    ],
+    "type": "javascript",
+    "level": "beginner",
+    "gravity": 1
+  },
+  {
+    "id": 2,
+    "question":"How do you call a function named 'myFunction'?",
+    "answers": [
+      {
+        "text": "myFunction()",
+        "correct": true
+      },
+      {
+        "text": "call function myFunction()",
+        "correct": false
+      },
+      {
+        "text": "call myFunction()",
+        "correct": false
+      }
+    ],
+    "type": "javascript",
+    "level": "beginner",
+    "gravity": 1
+  },
+  {
+    "id": 3,
+    "question":"How to write an IF statement in JavaScript?",
+    "answers": [
+      {
+        "text": "if (i == 5)",
+        "correct": true
+      },
+      {
+        "text": "if i = 5 then",
+        "correct": false
+      },
+      {
+        "text": "if i = 5",
+        "correct": false
+      },
+      {
+        "text": "if i == 5 then",
+        "correct": false
+      }
+    ],
+    "type": "javascript",
+    "level": "beginner",
+    "gravity": 1
+  },
+  {
+    "id": 4,
+    "question":"How to write an IF statement for executing some code if 'i' is NOT equal to 5?",
+    "answers": [
+      {
+        "text": "if (i != 5)",
+        "correct": true
+      },
+      {
+        "text": "if (i <> 5)",
+        "correct": false
+      },
+      {
+        "text": "if i <> 5",
+        "correct": false
+      },
+      {
+        "text": "if i =! 5 then",
+        "correct": false
+      }
+    ],
+    "type": "javascript",
+    "level": "beginner",
+    "gravity": 1
+  },
+  {
+    "id": 5,
+    "question":"How does a FOR loop start?",
+    "answers": [
+      {
+        "text": "for (i = 0; i <= 5; i++)",
+        "correct": true
+      },
+      {
+        "text": "for i = 1 to 5",
+        "correct": false
+      },
+      {
+        "text": "for (i <= 5; i++)",
+        "correct": false
+      },
+      {
+        "text": "for (i = 0; i <= 5)",
+        "correct": false
+      }
+    ],
+    "type": "javascript",
+    "level": "beginner",
+    "gravity": 1
+  },
+  {
+    "id": 6,
+    "question":"How does a WHILE loop start?",
+    "answers": [
+      {
+        "text": "while (i <= 10)",
+        "correct": true
+      },
+      {
+        "text": "while (i <= 10; i++)",
+        "correct": false
+      },
+      {
+        "text": "while i = 1 to 10",
+        "correct": false
+      }
+    ],
+    "type": "javascript",
+    "level": "beginner",
+    "gravity": 1
+  },
+  {
+    "id": 7,
+    "question":"How can you add a comment in a JavaScript?",
+    "answers": [
+      {
+        "text": "//This is a comment",
+        "correct": true
+      },
+      {
+        "text": "'This is a comment",
+        "correct": false
+      },
+      {
+        "text": "<!--This is a comment-->",
+        "correct": false
+      }
+    ],
+    "type": "javascript",
+    "level": "beginner",
+    "gravity": 1
+  },
+  {
+    "id": 8,
+    "question":"How to insert a comment that has more than one line?",
+    "answers": [
+      {
+        "text": "/*This comment has more than one line*/",
+        "correct": true
+      },
+      {
+        "text": "//This comment has more than one line//",
+        "correct": false
+      },
+      {
+        "text": "<!--This comment has more than one line-->",
+        "correct": false
+      }
+    ],
+    "type": "javascript",
+    "level": "beginner",
+    "gravity": 1
+  },
+  {
+    "id": 9,
+    "question":"What is the correct way to write a JavaScript array?",
+    "answers": [
+      {
+        "text": "let colors = ['red', 'green', 'blue']",
+        "correct": true
+      },
+      {
+        "text": "let colors = 'red', 'green', 'blue'",
+        "correct": false
+      },
+      {
+        "text": "let colors = 1 = ('red'), 2 = ('green'), 3 = ('blue')",
+        "correct": false
+      },
+      {
+        "text": "let colors = (1:'red', 2:'green', 3:'blue')",
+        "correct": false
+      }
+    ],
+    "type": "javascript",
+    "level": "beginner",
+    "gravity": 1
+  },
+  {
+    "id": 10,
+    "question":"Which operator is used to assign a value to a variable?",
+    "answers": [
+      {
+        "text": "=",
+        "correct": true
+      },
+      {
+        "text": "-",
+        "correct": false
+      },
+      {
+        "text": "x",
+        "correct": false
+      },
+      {
+        "text": "*",
+        "correct": false
+      }
+    ],
+    "type": "javascript",
+    "level": "beginner",
+    "gravity": 1
+  },
+  {
+    "id": 11,
+    "question":"What will the following code return: Boolean(10 > 9)",
+    "answers": [
+      {
+        "text": "NaN",
+        "correct": false
+      },
+      {
+        "text": "false",
+        "correct": false
+      },
+      {
+        "text": "true",
+        "correct": true
+      }
+    ],
+    "type": "javascript",
+    "level": "beginner",
+    "gravity": 1
+  },
+  {
+    "id": 12,
+    "question":"How do you create a function in Python?",
+    "answers": [
+      {
+        "text": "def myFunction()",
+        "correct": true
+      },
+      {
+        "text": "function = myFunction()",
+        "correct": false
+      },
+      {
+        "text": "def = myFunction()",
+        "correct": false
+      },
+      {
+        "text": "function:myFunction()",
+        "correct": false
+      }
+    ],
+    "type": "python",
+    "level": "beginner",
+    "gravity": 1
+  },
+  {
+    "id": 13,
+    "question":"How do you call a function named 'myFunction'?",
+    "answers": [
+      {
+        "text": "myFunction()",
+        "correct": true
+      },
+      {
+        "text": "call function myFunction()",
+        "correct": false
+      },
+      {
+        "text": "call myFunction()",
+        "correct": false
+      }
+    ],
+    "type": "python",
+    "level": "beginner",
+    "gravity": 1
+  },
+  {
+    "id": 14,
+    "question":"How to write an IF statement in python?",
+    "answers": [
+      {
+        "text": "if (i == 5)",
+        "correct": false
+      },
+      {
+        "text": "if i = 5 then",
+        "correct": false
+      },
+      {
+        "text": "if i = 5",
+        "correct": false
+      },
+      {
+        "text": "if i == 5:",
+        "correct": true
+      }
+    ],
+    "type": "python",
+    "level": "beginner",
+    "gravity": 1
+  },
+  {
+    "id": 15,
+    "question":"How to write an IF statement for executing some code if 'i' is NOT equal to 5?",
+    "answers": [
+      {
+        "text": "if i != 5:",
+        "correct": true
+      },
+      {
+        "text": "if (i <> 5)",
+        "correct": false
+      },
+      {
+        "text": "if i <> 5 then:",
+        "correct": false
+      },
+      {
+        "text": "if i =! 5 then",
+        "correct": false
+      }
+    ],
+    "type": "python",
+    "level": "beginner",
+    "gravity": 1
+  },
+  {
+    "id": 16,
+    "question":"How does a FOR loop start?",
+    "answers": [
+      {
+        "text": "for (i = 0; i <= 5; i++)",
+        "correct": false
+      },
+      {
+        "text": "for i in [1, 2, 3, 4]",
+        "correct": true
+      },
+      {
+        "text": "for (i <= 5; i++)",
+        "correct": false
+      },
+      {
+        "text": "for (i = 0; i <= 5)",
+        "correct": false
+      }
+    ],
+    "type": "python",
+    "level": "beginner",
+    "gravity": 1
+  },
+  {
+    "id": 17,
+    "question":"How does a WHILE loop start?",
+    "answers": [
+      {
+        "text": "while i <= 10:",
+        "correct": true
+      },
+      {
+        "text": "while (i <= 10; i++)",
+        "correct": false
+      },
+      {
+        "text": "while i = 1 to 10",
+        "correct": false
+      }
+    ],
+    "type": "python",
+    "level": "beginner",
+    "gravity": 1
+  },
+  {
+    "id": 18,
+    "question":"How can you add a comment in a Python?",
+    "answers": [
+      {
+        "text": "#This is a comment",
+        "correct": true
+      },
+      {
+        "text": "'This is a comment",
+        "correct": false
+      },
+      {
+        "text": "<!--This is a comment-->",
+        "correct": false
+      }
+    ],
+    "type": "python",
+    "level": "beginner",
+    "gravity": 1
+  },
+  {
+    "id": 19,
+    "question":"How to insert a comment that has more than one line?",
+    "answers": [
+      {
+        "text": " \"\"\"This comment has more than one line \"\"\"",
+        "correct": true
+      },
+      {
+        "text": "//This comment has more than one line//",
+        "correct": false
+      },
+      {
+        "text": "<!--This comment has more than one line-->",
+        "correct": false
+      }
+    ],
+    "type": "python",
+    "level": "beginner",
+    "gravity": 1
+  },
+  {
+    "id": 20,
+    "question":"What is the correct way to write a Python array?",
+    "answers": [
+      {
+        "text": "colors = ['red', 'green', 'blue']",
+        "correct": true
+      },
+      {
+        "text": "colors = 'red', 'green', 'blue'",
+        "correct": false
+      },
+      {
+        "text": "colors = 1 = ('red'), 2 = ('green'), 3 = ('blue')",
+        "correct": false
+      },
+      {
+        "text": "var colors = (1:'red', 2:'green', 3:'blue')",
+        "correct": false
+      }
+    ],
+    "type": "python",
+    "level": "beginner",
+    "gravity": 1
+  },
+  {
+    "id": 21,
+    "question":"Which operator is used to assign a value to a variable?",
+    "answers": [
+      {
+        "text": "=",
+        "correct": true
+      },
+      {
+        "text": "-",
+        "correct": false
+      },
+      {
+        "text": "x",
+        "correct": false
+      },
+      {
+        "text": "*",
+        "correct": false
+      }
+    ],
+    "type": "python",
+    "level": "beginner",
+    "gravity": 1
+  },
+  {
+    "id": 22,
+    "question":"What will the following code return: Boolean(10 > 9)",
+    "answers": [
+      {
+        "text": "NaN",
+        "correct": false
+      },
+      {
+        "text": "False",
+        "correct": false
+      },
+      {
+        "text": "True",
+        "correct": true
+      }
+    ],
+    "type": "python",
+    "level": "beginner",
+    "gravity": 1
+  }
+]

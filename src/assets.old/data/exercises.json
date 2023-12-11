@@ -1,0 +1,439 @@
+[
+  {
+    "id":1,
+    "introduction" : [ 
+        "<p>in programming, syntax refers to the set of rules that define the correct way to write a program in a particular language. variables are a way to store and refer to data in a program, and each variable has a name and a value. the scope of a variable refers to where in a program the variable is defined and accessible. in other words, the scope of a variable determines which parts of a program can access and use the variable. different programming languages have different rules for defining and using variables, including rules for how the scope of a variable is determined.</p>"
+    ],
+    "subintroduction" : [ 
+        "<p>in javascript, variables are used to store values that can be changed or modified during the execution of a program. there are three ways to declare variables in javascript: <code>const</code>, <code>let</code>, and <code>var</code>.</p> <ul>\n<li><code>const</code> is used to declare a constant variable, which means that the value of the variable cannot be reassigned. the value of a constant variable must be set when it is declared, and it cannot be changed later. for example:</li>\n</ul> <pre><code class=\"js language-js\">const pi = 3.14;\npi = 3.14159;  // error: assignment to constant variable\n</code></pre> <p>one important thing to note is that the value of a constant variable must be set when it is declared. you cannot declare a constant variable without initializing it with a value. in addition, the value of a constant variable cannot be modified, but if the value is an object, the properties of the object can still be changed. for example:</p> <pre><code class=\"js language-js\">const obj = { a: 1, b: 2 };\nobj.a = 3;  // this is allowed\nobj = { a: 3, b: 4 };  // error: assignment to constant variable\n</code></pre> <p>the same thing can happen in an array. you can declare an array as <code>const</code> and still add or remove elements.</p> <ul>\n<li><code>let</code> is used to declare a variable that can be reassigned. the value of a <code>let</code> variable can be changed at any time during the execution of a program. for example:</li>\n</ul> <pre><code class=\"js language-js\">let x = 10;\nx = 20;  // the value of x is now 20\n</code></pre> <ul>\n<li><code>var</code> is similar to <code>let</code>, but it has some differences in the way it is scoped. in javascript, variables declared with <code>var</code> are either function-scoped or global-scoped, depending on where they are declared. variables declared with <code>let</code> and <code>const</code> are block-scoped, meaning they are only accessible within the block of code in which they are defined.</li>\n</ul> <p>in addition to <code>const</code>, <code>let</code>, and <code>var</code>, javascript also has several rules for naming variables. variable names must start with a letter, an underscore (<code>_</code>), or a dollar sign (<code>$</code>). they can also contain numbers, but they cannot start with a number. variable names are case-sensitive, so <code>x</code> and <code>x</code> are considered to be different variables. variable names cannot be the same as any of the reserved keywords in javascript, such as <code>for</code>, <code>while</code>, or <code>function</code>. </p> <p>here are some examples of valid variable names in javascript:</p> <pre><code class=\"js language-js\">let x;\nlet y;\nlet z;\nlet _private;\nlet $special;\nlet firstname;\n</code></pre> <p>in a variable declaration, multiple variables can be declared in a single statement using <code>let</code>, <code>var</code> or <code>const</code>. when doing so they are separated by the <code>,</code> operator and can be initialized with a value using the <code>=</code> operator. however, while they are declared in the same statement, their declaration is sequential.</p> <p>in general, it is a good idea to choose descriptive and meaningful names for your variables to make your code easier to read and understand. it is also a good practice to follow a consistent naming convention, such as using camelcase for variables and constants.</p>"
+    ],
+    "exercise_description" : [ 
+        "<p>declare a variable using the <code>var</code> keyword, initialize it with the value 17 and print it.</p>"
+    ],
+    "category" : {
+        "chapter" : "syntax variables scope",
+        "subchapter" : [ 
+            {
+                "chapter" : "syntax variables scope",
+                "subchapter" : [ 
+                    "variable declaration"
+                ]
+            }
+        ]
+    },
+    "hints" : [ 
+        {
+            "text" : "<p>to print a number to the console, use the <code>log()</code> function:</p>",
+            "code" : "<pre><code class=\"js language-js\">console.log(10);\n</code></pre>",
+            "penalty" : "<p>20 points</p>"
+        }
+    ],
+    "author" : {
+        "name" : "Christos Hadjichristofi",
+        "email" : "christoshadjichristofi@hotmail.com"
+    },
+    "exercise" : "exercise 2",
+    "type" : "javascript",
+    "code" : "var x = 17;\nconsole.log(x);\n",
+    "output" : [ 
+        "type=oneline\n17"
+    ]
+  },
+  {
+    "id":2,
+    "introduction" : [ 
+        "<p>in programming, syntax refers to the set of rules that define the correct way to write a program in a particular language. variables are a way to store and refer to data in a program, and each variable has a name and a value. the scope of a variable refers to where in a program the variable is defined and accessible. in other words, the scope of a variable determines which parts of a program can access and use the variable. different programming languages have different rules for defining and using variables, including rules for how the scope of a variable is determined.</p>"
+    ],
+    "subintroduction" : [ 
+        "<p>in javascript, variables are used to store values that can be changed or modified during the execution of a program. there are three ways to declare variables in javascript: <code>const</code>, <code>let</code>, and <code>var</code>.</p> <ul>\n<li><code>const</code> is used to declare a constant variable, which means that the value of the variable cannot be reassigned. the value of a constant variable must be set when it is declared, and it cannot be changed later. for example:</li>\n</ul> <pre><code class=\"js language-js\">const pi = 3.14;\npi = 3.14159;  // error: assignment to constant variable\n</code></pre> <p>one important thing to note is that the value of a constant variable must be set when it is declared. you cannot declare a constant variable without initializing it with a value. in addition, the value of a constant variable cannot be modified, but if the value is an object, the properties of the object can still be changed. for example:</p> <pre><code class=\"js language-js\">const obj = { a: 1, b: 2 };\nobj.a = 3;  // this is allowed\nobj = { a: 3, b: 4 };  // error: assignment to constant variable\n</code></pre> <p>the same thing can happen in an array. you can declare an array as <code>const</code> and still add or remove elements.</p> <ul>\n<li><code>let</code> is used to declare a variable that can be reassigned. the value of a <code>let</code> variable can be changed at any time during the execution of a program. for example:</li>\n</ul> <pre><code class=\"js language-js\">let x = 10;\nx = 20;  // the value of x is now 20\n</code></pre> <ul>\n<li><code>var</code> is similar to <code>let</code>, but it has some differences in the way it is scoped. in javascript, variables declared with <code>var</code> are either function-scoped or global-scoped, depending on where they are declared. variables declared with <code>let</code> and <code>const</code> are block-scoped, meaning they are only accessible within the block of code in which they are defined.</li>\n</ul> <p>in addition to <code>const</code>, <code>let</code>, and <code>var</code>, javascript also has several rules for naming variables. variable names must start with a letter, an underscore (<code>_</code>), or a dollar sign (<code>$</code>). they can also contain numbers, but they cannot start with a number. variable names are case-sensitive, so <code>x</code> and <code>x</code> are considered to be different variables. variable names cannot be the same as any of the reserved keywords in javascript, such as <code>for</code>, <code>while</code>, or <code>function</code>. </p> <p>here are some examples of valid variable names in javascript:</p> <pre><code class=\"js language-js\">let x;\nlet y;\nlet z;\nlet _private;\nlet $special;\nlet firstname;\n</code></pre> <p>in a variable declaration, multiple variables can be declared in a single statement using <code>let</code>, <code>var</code> or <code>const</code>. when doing so they are separated by the <code>,</code> operator and can be initialized with a value using the <code>=</code> operator. however, while they are declared in the same statement, their declaration is sequential.</p> <p>in general, it is a good idea to choose descriptive and meaningful names for your variables to make your code easier to read and understand. it is also a good practice to follow a consistent naming convention, such as using camelcase for variables and constants.</p>"
+    ],
+    "exercise_description" : [ 
+        "<p>declare two variables with names <code>x</code> and <code>y</code> and values <code>17</code> and <code>42</code> respectively. print the results to the console, in the same line, separated by space.</p>"
+    ],
+    "category" : {
+        "chapter" : "syntax variables scope",
+        "subchapter" : [ 
+            {
+                "chapter" : "syntax variables scope",
+                "subchapter" : [ 
+                    "variable declaration"
+                ]
+            }
+        ]
+    },
+    "hints" : [ 
+        {
+            "text" : "<p>to print anything to the console, use the <code>log()</code> function:</p>",
+            "code" : "<pre><code class=\"js language-js\">let x = 1;\nconsole.log(x);\n</code></pre>",
+            "penalty" : "<p>20 points</p>"
+        }, 
+        {
+            "text" : "<p>to declare a variable using the <code>let</code> keyword:</p>",
+            "code" : "<pre><code class=\"js language-js\">let x = 1;\n</code></pre>",
+            "penalty" : "<p>20 points</p>"
+        }, 
+        {
+            "text" : "<p>to declare multiple variables using the <code>let</code> keyword, separate them using the comma operator:</p>",
+            "code" : "<pre><code class=\"js language-js\">let a = 1, b = 2;\n</code></pre>",
+            "penalty" : "<p>20 points</p>"
+        }, 
+        {
+            "text" : "<p>to print multiple values to the console using the <code>log()</code> keyword, separate them using the comma operator:</p>",
+            "code" : "<pre><code class=\"js language-js\">console.log(1, 2, 3)\n</code></pre>",
+            "penalty" : "<p>20 points</p>"
+        }
+    ],
+    "author" : {
+        "name" : "Christos Hadjichristofi",
+        "email" : "christoshadjichristofi@hotmail.com"
+    },
+    "exercise" : "exercise 11",
+    "type" : "javascript",
+    "code" : "// Multiple variables can be declared and initialized separated by the comma operator\nlet x = 17, y = 42;\nconsole.log(x, y);\n",
+    "output" : [ 
+        "type=oneline\n17 42"
+    ]
+  },
+  {
+    "id":3,
+    "introduction" : [ 
+        "<p>in programming, syntax refers to the set of rules that define the correct way to write a program in a particular language. variables are a way to store and refer to data in a program, and each variable has a name and a value. the scope of a variable refers to where in a program the variable is defined and accessible. in other words, the scope of a variable determines which parts of a program can access and use the variable. different programming languages have different rules for defining and using variables, including rules for how the scope of a variable is determined.</p>"
+    ],
+    "subintroduction" : [ 
+        "<p>in javascript, variables are used to store values that can be changed or modified during the execution of a program. there are three ways to declare variables in javascript: <code>const</code>, <code>let</code>, and <code>var</code>.</p> <ul>\n<li><code>const</code> is used to declare a constant variable, which means that the value of the variable cannot be reassigned. the value of a constant variable must be set when it is declared, and it cannot be changed later. for example:</li>\n</ul> <pre><code class=\"js language-js\">const pi = 3.14;\npi = 3.14159;  // error: assignment to constant variable\n</code></pre> <p>one important thing to note is that the value of a constant variable must be set when it is declared. you cannot declare a constant variable without initializing it with a value. in addition, the value of a constant variable cannot be modified, but if the value is an object, the properties of the object can still be changed. for example:</p> <pre><code class=\"js language-js\">const obj = { a: 1, b: 2 };\nobj.a = 3;  // this is allowed\nobj = { a: 3, b: 4 };  // error: assignment to constant variable\n</code></pre> <p>the same thing can happen in an array. you can declare an array as <code>const</code> and still add or remove elements.</p> <ul>\n<li><code>let</code> is used to declare a variable that can be reassigned. the value of a <code>let</code> variable can be changed at any time during the execution of a program. for example:</li>\n</ul> <pre><code class=\"js language-js\">let x = 10;\nx = 20;  // the value of x is now 20\n</code></pre> <ul>\n<li><code>var</code> is similar to <code>let</code>, but it has some differences in the way it is scoped. in javascript, variables declared with <code>var</code> are either function-scoped or global-scoped, depending on where they are declared. variables declared with <code>let</code> and <code>const</code> are block-scoped, meaning they are only accessible within the block of code in which they are defined.</li>\n</ul> <p>in addition to <code>const</code>, <code>let</code>, and <code>var</code>, javascript also has several rules for naming variables. variable names must start with a letter, an underscore (<code>_</code>), or a dollar sign (<code>$</code>). they can also contain numbers, but they cannot start with a number. variable names are case-sensitive, so <code>x</code> and <code>x</code> are considered to be different variables. variable names cannot be the same as any of the reserved keywords in javascript, such as <code>for</code>, <code>while</code>, or <code>function</code>. </p> <p>here are some examples of valid variable names in javascript:</p> <pre><code class=\"js language-js\">let x;\nlet y;\nlet z;\nlet _private;\nlet $special;\nlet firstname;\n</code></pre> <p>in a variable declaration, multiple variables can be declared in a single statement using <code>let</code>, <code>var</code> or <code>const</code>. when doing so they are separated by the <code>,</code> operator and can be initialized with a value using the <code>=</code> operator. however, while they are declared in the same statement, their declaration is sequential.</p> <p>in general, it is a good idea to choose descriptive and meaningful names for your variables to make your code easier to read and understand. it is also a good practice to follow a consistent naming convention, such as using camelcase for variables and constants.</p>"
+    ],
+    "exercise_description" : [ 
+        "<p>declare two variables with names <code>x</code> and <code>y</code> and values <code>17</code> and <code>42</code> respectively. in the same statement as the previous two, declare a new variable <code>z</code> with value equal to that of <code>y</code>. print the results to the console, in the same line, separated by space.</p>"
+    ],
+    "category" : {
+        "chapter" : "syntax variables scope",
+        "subchapter" : [ 
+            {
+                "chapter" : "syntax variables scope",
+                "subchapter" : [ 
+                    "variable declaration"
+                ]
+            }
+        ]
+    },
+    "hints" : [ 
+        {
+            "text" : "<p>to print anything to the console, use the <code>log()</code> function:</p>",
+            "code" : "<pre><code class=\"js language-js\">let x = 1;\nconsole.log(x);\n</code></pre>",
+            "penalty" : "<p>20 points</p>"
+        }, 
+        {
+            "text" : "<p>to declare a variable using the <code>let</code> keyword:</p>",
+            "code" : "<pre><code class=\"js language-js\">let x = 1;\n</code></pre>",
+            "penalty" : "<p>20 points</p>"
+        }, 
+        {
+            "text" : "<p>to declare multiple variables using the <code>let</code> keyword, separate them using the comma operator:</p>",
+            "code" : "<pre><code class=\"js language-js\">let a = 1, b = 2;\n</code></pre>",
+            "penalty" : "<p>20 points</p>"
+        }, 
+        {
+            "text" : "<p>to print multiple values to the console using the <code>log()</code> keyword, separate them using the comma operator:</p>",
+            "code" : "<pre><code class=\"js language-js\">console.log(1, 2, 3)\n</code></pre>",
+            "penalty" : "<p>20 points</p>"
+        }
+    ],
+    "author" : {
+        "name" : "Christos Hadjichristofi",
+        "email" : "christoshadjichristofi@hotmail.com"
+    },
+    "exercise" : "exercise 12",
+    "type" : "javascript",
+    "code" : "// Multiple variables can be declared and initialized separated by the comma operator\nlet x = 17, y = 42, z = y;\nconsole.log(x, y, z);\n",
+    "output" : [ 
+        "type=oneline\n17 42 42"
+    ]
+  },
+  {
+    "id":4,
+    "introduction" : [ 
+        "<p>in programming, syntax refers to tidhe set of rules that define the correct way to write a program in a particular language. variables are a way to store and refer to data in a program, and each variable has a name and a value. the scope of a variable refers to where in a program the variable is defined and accessible. in other words, the scope of a variable determines which parts of a program can access and use the variable. different programming languages have different rules for defining and using variables, including rules for how the scope of a variable is determined.</p>"
+    ],
+    "subintroduction" : [ 
+        "<p>in javascript, variables are used to store values that can be changed or modified during the execution of a program. there are three ways to declare variables in javascript: <code>const</code>, <code>let</code>, and <code>var</code>.</p> <ul>\n<li><code>const</code> is used to declare a constant variable, which means that the value of the variable cannot be reassigned. the value of a constant variable must be set when it is declared, and it cannot be changed later. for example:</li>\n</ul> <pre><code class=\"js language-js\">const pi = 3.14;\npi = 3.14159;  // error: assignment to constant variable\n</code></pre> <p>one important thing to note is that the value of a constant variable must be set when it is declared. you cannot declare a constant variable without initializing it with a value. in addition, the value of a constant variable cannot be modified, but if the value is an object, the properties of the object can still be changed. for example:</p> <pre><code class=\"js language-js\">const obj = { a: 1, b: 2 };\nobj.a = 3;  // this is allowed\nobj = { a: 3, b: 4 };  // error: assignment to constant variable\n</code></pre> <p>the same thing can happen in an array. you can declare an array as <code>const</code> and still add or remove elements.</p> <ul>\n<li><code>let</code> is used to declare a variable that can be reassigned. the value of a <code>let</code> variable can be changed at any time during the execution of a program. for example:</li>\n</ul> <pre><code class=\"js language-js\">let x = 10;\nx = 20;  // the value of x is now 20\n</code></pre> <ul>\n<li><code>var</code> is similar to <code>let</code>, but it has some differences in the way it is scoped. in javascript, variables declared with <code>var</code> are either function-scoped or global-scoped, depending on where they are declared. variables declared with <code>let</code> and <code>const</code> are block-scoped, meaning they are only accessible within the block of code in which they are defined.</li>\n</ul> <p>in addition to <code>const</code>, <code>let</code>, and <code>var</code>, javascript also has several rules for naming variables. variable names must start with a letter, an underscore (<code>_</code>), or a dollar sign (<code>$</code>). they can also contain numbers, but they cannot start with a number. variable names are case-sensitive, so <code>x</code> and <code>x</code> are considered to be different variables. variable names cannot be the same as any of the reserved keywords in javascript, such as <code>for</code>, <code>while</code>, or <code>function</code>. </p> <p>here are some examples of valid variable names in javascript:</p> <pre><code class=\"js language-js\">let x;\nlet y;\nlet z;\nlet _private;\nlet $special;\nlet firstname;\n</code></pre> <p>in a variable declaration, multiple variables can be declared in a single statement using <code>let</code>, <code>var</code> or <code>const</code>. when doing so they are separated by the <code>,</code> operator and can be initialized with a value using the <code>=</code> operator. however, while they are declared in the same statement, their declaration is sequential.</p> <p>in general, it is a good idea to choose descriptive and meaningful names for your variables to make your code easier to read and understand. it is also a good practice to follow a consistent naming convention, such as using camelcase for variables and constants.</p>"
+    ],
+    "exercise_description" : [ 
+        "<p>declare two variables with names <code>x</code> and <code>y</code> by declaring them using the comma operator (multiple variables declaration using the <code>let</code> keyword one time only). try to initialize <code>x</code> with the value of <code>y</code>, and <code>y</code> with the value <code>42</code>. what do you notice?.</p>"
+    ],
+    "category" : {
+        "chapter" : "syntax variables scope",
+        "subchapter" : [ 
+            {
+                "chapter" : "syntax variables scope",
+                "subchapter" : [ 
+                    "variable declaration"
+                ]
+            }
+        ]
+    },
+    "hints" : [ 
+        {
+            "text" : "<p>to declare a variable using the <code>let</code> keyword:</p>",
+            "code" : "<pre><code class=\"js language-js\">let x = 1;\n</code></pre>",
+            "penalty" : "<p>20 points</p>"
+        }, 
+        {
+            "text" : "<p>to declare multiple variables using the <code>let</code> keyword, separate them using the comma operator:</p>",
+            "code" : "<pre><code class=\"js language-js\">let a = 1, b = 2;\n</code></pre>",
+            "penalty" : "<p>20 points</p>"
+        }
+    ],
+    "author" : {
+        "name" : "Christos Hadjichristofi",
+        "email" : "christoshadjichristofi@hotmail.com"
+    },
+    "exercise" : "exercise 13",
+    "type" : "javascript",
+    "code" : "// Multiple variables can be declared and initialized separated by the comma operator. However, \n// these declarations are sequential, therefore a value cannot be used before it's declared,\n// resulting in an error.\nlet x = y, y = 42;\nconsole.log(x, y);\n",
+    "output" : [ 
+        "type=oneline\nUncaught ReferenceError: y is not defined"
+    ]
+  },
+  {
+    "id":5,
+    "introduction" : [ 
+        "<p>in programming, syntax refers to the set of rules that define the correct way to write a program in a particular language. variables are a way to store and refer to data in a program, and each variable has a name and a value. the scope of a variable refers to where in a program the variable is defined and accessible. in other words, the scope of a variable determines which parts of a program can access and use the variable. different programming languages have different rules for defining and using variables, including rules for how the scope of a variable is determined.</p>"
+    ],
+    "subintroduction" : [ 
+        "<p>in javascript, variables are used to store values that can be changed or modified during the execution of a program. there are three ways to declare variables in javascript: <code>const</code>, <code>let</code>, and <code>var</code>.</p> <ul>\n<li><code>const</code> is used to declare a constant variable, which means that the value of the variable cannot be reassigned. the value of a constant variable must be set when it is declared, and it cannot be changed later. for example:</li>\n</ul> <pre><code class=\"js language-js\">const pi = 3.14;\npi = 3.14159;  // error: assignment to constant variable\n</code></pre> <p>one important thing to note is that the value of a constant variable must be set when it is declared. you cannot declare a constant variable without initializing it with a value. in addition, the value of a constant variable cannot be modified, but if the value is an object, the properties of the object can still be changed. for example:</p> <pre><code class=\"js language-js\">const obj = { a: 1, b: 2 };\nobj.a = 3;  // this is allowed\nobj = { a: 3, b: 4 };  // error: assignment to constant variable\n</code></pre> <p>the same thing can happen in an array. you can declare an array as <code>const</code> and still add or remove elements.</p> <ul>\n<li><code>let</code> is used to declare a variable that can be reassigned. the value of a <code>let</code> variable can be changed at any time during the execution of a program. for example:</li>\n</ul> <pre><code class=\"js language-js\">let x = 10;\nx = 20;  // the value of x is now 20\n</code></pre> <ul>\n<li><code>var</code> is similar to <code>let</code>, but it has some differences in the way it is scoped. in javascript, variables declared with <code>var</code> are either function-scoped or global-scoped, depending on where they are declared. variables declared with <code>let</code> and <code>const</code> are block-scoped, meaning they are only accessible within the block of code in which they are defined.</li>\n</ul> <p>in addition to <code>const</code>, <code>let</code>, and <code>var</code>, javascript also has several rules for naming variables. variable names must start with a letter, an underscore (<code>_</code>), or a dollar sign (<code>$</code>). they can also contain numbers, but they cannot start with a number. variable names are case-sensitive, so <code>x</code> and <code>x</code> are considered to be different variables. variable names cannot be the same as any of the reserved keywords in javascript, such as <code>for</code>, <code>while</code>, or <code>function</code>. </p> <p>here are some examples of valid variable names in javascript:</p> <pre><code class=\"js language-js\">let x;\nlet y;\nlet z;\nlet _private;\nlet $special;\nlet firstname;\n</code></pre> <p>in a variable declaration, multiple variables can be declared in a single statement using <code>let</code>, <code>var</code> or <code>const</code>. when doing so they are separated by the <code>,</code> operator and can be initialized with a value using the <code>=</code> operator. however, while they are declared in the same statement, their declaration is sequential.</p> <p>in general, it is a good idea to choose descriptive and meaningful names for your variables to make your code easier to read and understand. it is also a good practice to follow a consistent naming convention, such as using camelcase for variables and constants.</p>"
+    ],
+    "exercise_description" : [ 
+        "<p>declare a variable using the <code>let</code> keyword, initialize it with the value 42 and print it.</p>"
+    ],
+    "category" : {
+        "chapter" : "syntax variables scope",
+        "subchapter" : [ 
+            {
+                "chapter" : "syntax variables scope",
+                "subchapter" : [ 
+                    "variable declaration"
+                ]
+            }
+        ]
+    },
+    "hints" : [ 
+        {
+            "text" : "<p>to print a number to the console, use the <code>log()</code> function:</p>",
+            "code" : "<pre><code class=\"js language-js\">console.log(10);\n</code></pre>",
+            "penalty" : "<p>20 points</p>"
+        }
+    ],
+    "author" : {
+        "name" : "Christos Hadjichristofi",
+        "email" : "christoshadjichristofi@hotmail.com"
+    },
+    "exercise" : "exercise 1",
+    "type" : "javascript",
+    "code" : "let x = 42;\nconsole.log(x);\n",
+    "output" : [ 
+        "type=oneline\n42"
+    ]
+  },
+  {
+    "id":6,
+    "introduction" : [ 
+        "<p>lists are used to store multiple items in a single variable.</p> <p>lists are one of 4 built-in data types in python used to store collections of data. a list can contain any datatype, even different datatypes.</p> <p>the items of a list are always in order and it is very easy to add, change or remove elements of a list.</p> <p>lists are created using square brackets:</p> <pre><code class=\"python language-python\">listname = [1,2,3]\n\nprint(listname)\n</code></pre>"
+    ],
+    "subintroduction" : [ 
+        "<p>to get a sublist of a list, slicing can be used.</p> <pre><code class=\"python language-python\">values = listname[start:end]\n</code></pre> <p>the index <code>start</code> is included while the index <code>end</code> is not.</p>"
+    ],
+    "exercise_description" : [ 
+        "<p>create a list with the name <code>nums</code>, that contains all the integers between <code>1</code> and <code>10</code> (included). then create a new list which contains the 3rd, 4th and 5th element of the list <code>nums</code> and name it <code>nums35</code>. print both of the lists.</p>"
+    ],
+    "category" : {
+        "chapter" : "lists",
+        "subchapter" : [ 
+            {
+                "chapter" : "lists",
+                "subchapter" : [ 
+                    " how to get a sublist in python", 
+                    " indexing"
+                ]
+            }
+        ]
+    },
+    "hints" : [ 
+        {
+            "text" : "<p>the index <code>start</code> is included while the index <code>end</code> is not.</p>",
+            "code" : "",
+            "penalty" : "<p>20 points</p>"
+        }
+    ],
+    "author" : {
+        "name" : "Nicoletta Tsiopani ",
+        "email" : "tsiopnicol_99@hotmail.com"
+    },
+    "exercise" : "exercise 11",
+    "type" : "python",
+    "code" : "nums = list(range(1,11))\nnums35 = nums[2:5]\n\nprint(nums)\nprint(nums35)\n",
+    "output" : [ 
+        "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]^[3, 4, 5]"
+    ]
+  },
+  {
+    "id":7,
+    "introduction" : [ 
+        "<p>lists are used to store multiple items in a single variable.</p> <p>lists are one of 4 built-in data types in python used to store collections of data. a list can contain any datatype, even different datatypes.</p> <p>the items of a list are always in order and it is very easy to add, change or remove elements of a list.</p> <p>lists are created using square brackets:</p> <pre><code class=\"python language-python\">listname = [1,2,3]\n\nprint(listname)\n</code></pre>"
+    ],
+    "subintroduction" : [ 
+        "<p>a list can contain any datatype, even other lists. </p> <p>when lists contain other lists, nested lists are created.</p>"
+    ],
+    "exercise_description" : [ 
+        "<p>create two lists with two values each: the name of the country and its capital. the first list is <code>spain</code> which contains the strings <code>'spain'</code> and '<code>madrid'</code>, and the second list is <code>italy</code> which contains the strings <code>'italy'</code> and <code>'rome'</code>. then create a nested list with the name <code>country_capital</code> which includes the two lists <code>spain</code> and <code>italy</code> and print it.</p>"
+    ],
+    "category" : {
+        "chapter" : "lists",
+        "subchapter" : [ 
+            {
+                "chapter" : "lists",
+                "subchapter" : [ 
+                    " python nested lists"
+                ]
+            }
+        ]
+    },
+    "hints" : [ 
+        {
+            "text" : "<p>lists are created using square brackets:</p>",
+            "code" : "<pre><code class=\"python language-python\">listname = [1,2,3]\n\nprint(listname)\n</code></pre>",
+            "penalty" : "<p>20 points</p>"
+        }
+    ],
+    "author" : {
+        "name" : "Nicoletta Tsiopani ",
+        "email" : "tsiopnicol_99@hotmail.com"
+    },
+    "exercise" : "exercise 12",
+    "type" : "python",
+    "code" : "spain = ['Spain','Madrid']\nitaly = ['Italy','Rome']\n\ncountry_capital = [spain,italy]\n\nprint(country_capital)\n",
+    "output" : [ 
+        "[['Spain', 'Madrid'], ['Italy', 'Rome']]"
+    ]
+  },
+  {
+    "id":8,
+    "introduction" : [ 
+        "<p>lists are used to store multiple items in a single variable.</p> <p>lists are one of 4 built-in data types in python used to store collections of data. a list can contain any datatype, even different datatypes.</p> <p>the items of a list are always in order and it is very easy to add, change or remove elements of a list.</p> <p>lists are created using square brackets:</p> <pre><code class=\"python language-python\">listname = [1,2,3]\n\nprint(listname)\n</code></pre>"
+    ],
+    "subintroduction" : [ 
+        "<p>a list can contain any datatype, even other lists. </p> <p>when lists contain other lists, nested lists are created.</p>"
+    ],
+    "exercise_description" : [ 
+        "<p>create two lists with the names <code>oddnums</code> and <code>evennums</code> which contain the odd numbers (i.e. <code>1</code>,<code>3</code>,<code>5</code>,…) and the even numbers (i.e. <code>2</code>,<code>4</code>,<code>6</code>,…) between 1 and 20 (included) respectively. then create a list <code>nums</code> which contains the two other lists. print the first item of the first item of the list <code>nums</code> and the last item of the last item of the list <code>nums</code>.</p>"
+    ],
+    "category" : {
+        "chapter" : "lists",
+        "subchapter" : [ 
+            {
+                "chapter" : "lists",
+                "subchapter" : [ 
+                    " python nested lists", 
+                    " indexing"
+                ]
+            }
+        ]
+    },
+    "hints" : [ 
+        {
+            "text" : "<p>to access items in nested lists use more than one square brackets:</p>",
+            "code" : "<pre><code class=\"python language-python\">variable = listname[index][index]\n</code></pre>",
+            "penalty" : "<p>20 points</p>"
+        }
+    ],
+    "author" : {
+        "name" : "Nicoletta Tsiopani ",
+        "email" : "tsiopnicol_99@hotmail.com"
+    },
+    "exercise" : "exercise 13",
+    "type" : "python",
+    "code" : "oddnums = list(range(1,20,2))\nevennmums = list(range(2,21,2))\n\nnums = [oddnums,evennums]\n\nprint(nums[0][0])\nprint(nums[-1][-1])\n",
+    "output" : [ 
+        "1^20"
+    ]
+  },
+  {
+    "id":9,
+    "introduction" : [ 
+        "<p>lists are used to store multiple items in a single variable.</p> <p>lists are one of 4 built-in data types in python used to store collections of data. a list can contain any datatype, even different datatypes.</p> <p>the items of a list are always in order and it is very easy to add, change or remove elements of a list.</p> <p>lists are created using square brackets:</p> <pre><code class=\"python language-python\">listname = [1,2,3]\n\nprint(listname)\n</code></pre>"
+    ],
+    "subintroduction" : [ 
+        "<p>the sort() method is used to sort a list in either ascending or descending way.</p> <pre><code class=\"python language-python\">listname.sort()\n\nlistname.sort(reverse=true)\n</code></pre> <p>the first command is used to sort a list in ascending order, while the second command is used to sort a list in descending order.</p>"
+    ],
+    "exercise_description" : [ 
+        "<p>create the list <code>numbers</code> with the items <code>[4,-1,3,7,9,-5,12]</code> and sort it in ascending order. then print the sorted list.</p>"
+    ],
+    "category" : {
+        "chapter" : "lists",
+        "subchapter" : [ 
+            {
+                "chapter" : "lists",
+                "subchapter" : [ 
+                    " list sort() method"
+                ]
+            }
+        ]
+    },
+    "hints" : [ 
+        {
+            "text" : "<p>to sort a list in ascending way write:</p>",
+            "code" : "<pre><code class=\"python language-python\">listname.sort()\n</code></pre>",
+            "penalty" : "<p>20 points</p>"
+        }
+    ],
+    "author" : {
+        "name" : "Nicoletta Tsiopani ",
+        "email" : "tsiopnicol_99@hotmail.com"
+    },
+    "exercise" : "exercise 14",
+    "type" : "python",
+    "code" : "numbers = [4,-1,3,7,9,-5,12]\n\nnumbers.sort()\n\nprint(numbers)\n",
+    "output" : [ 
+        "[-5, -1, 3, 4, 7, 9, 12]"
+    ]
+  },
+  {
+    "id":10,
+    "introduction" : [ 
+        "<p>lists are used to store multiple items in a single variable.</p> <p>lists are one of 4 built-in data types in python used to store collections of data. a list can contain any datatype, even different datatypes.</p> <p>the items of a list are always in order and it is very easy to add, change or remove elements of a list.</p> <p>lists are created using square brackets:</p> <pre><code class=\"python language-python\">listname = [1,2,3]\n\nprint(listname)\n</code></pre>"
+    ],
+    "subintroduction" : [ 
+        "<p>lists are created using sqaure brackets.</p> <pre><code class=\"python language-python\">listname = [1,2,3]\n\nprint(listname)\n</code></pre> <p>another way to create a list is by using the <code>list()</code> method, which takes only one input.</p> <pre><code class=\"python language-python\">listname = list((1,2,3))\n\nprint(listname)\n</code></pre>"
+    ],
+    "exercise_description" : [ 
+        "<p>create and print a list that contains the three letters <code>'a'</code>, <code>'b'</code> and <code>'c'</code> as strings, using square brackets. name the list <code>abc</code>.</p>"
+    ],
+    "category" : {
+        "chapter" : "lists",
+        "subchapter" : [ 
+            {
+                "chapter" : "lists",
+                "subchapter" : [ 
+                    " different ways to create list"
+                ]
+            }
+        ]
+    },
+    "hints" : [ 
+        {
+            "text" : "<p>to create a list by using square brackets write:</p>",
+            "code" : "<pre><code class=\"python language-python\">listname = []\n</code></pre>",
+            "penalty" : "<p>20 points</p>"
+        }
+    ],
+    "author" : {
+        "name" : "Nicoletta Tsiopani ",
+        "email" : "tsiopnicol_99@hotmail.com"
+    },
+    "exercise" : "exercise 1",
+    "type" : "python",
+    "code" : "abc = ['a','b','c']\n\nprint(abc)\n",
+    "output" : [ 
+        "['a', 'b', 'c']"
+    ]
+  }
+]

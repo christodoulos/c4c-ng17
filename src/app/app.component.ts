@@ -12,11 +12,18 @@ import {
   selectShowFooter,
   RouteDataService,
 } from '@c4c/state';
+import { LandingLayoutComponent } from './layout/landing-layout/landing-layout.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, NavigationComponent, FooterComponent],
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    NavigationComponent,
+    FooterComponent,
+    LandingLayoutComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
