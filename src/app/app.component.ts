@@ -1,10 +1,10 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+// import { CommonModule } from '@angular/common';
+// import { RouterOutlet } from '@angular/router';
 import { Store } from '@ngrx/store';
 
-import { NavigationComponent } from '@c4c/components';
-import { FooterComponent } from '@c4c/pages';
+// import { NavigationComponent } from '@c4c/components';
+// import { FooterComponent } from '@c4c/pages';
 import { AuthService } from '@c4c/services';
 import {
   AppState,
@@ -18,10 +18,10 @@ import { LandingLayoutComponent } from './layout/landing-layout/landing-layout.c
   selector: 'app-root',
   standalone: true,
   imports: [
-    CommonModule,
-    RouterOutlet,
-    NavigationComponent,
-    FooterComponent,
+    // CommonModule,
+    // RouterOutlet,
+    // NavigationComponent,
+    // FooterComponent,
     LandingLayoutComponent,
   ],
   templateUrl: './app.component.html',

@@ -1,9 +1,10 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
-import { PricingComponent } from './pages/home/pricing/pricing.component';
+
+import { LandingLayoutComponent } from 'src/app/layout/landing-layout/landing-layout.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
-  { path: 'home/pricing', component: PricingComponent },
+  // { path: '', redirectTo: 'home', pathMatch: 'full' },
+  // { path: 'home', component: HomeComponent },
+  // { path: 'home/pricing', component: PricingComponent },
+  { path: '**', component: LandingLayoutComponent },
 ];

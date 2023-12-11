@@ -26,7 +26,8 @@
       "@c4c/services": ["./src/app/services"],
       "@c4c/interfaces": ["./src/app/interfaces"],
       "@c4c/state": ["./src/app/state"],
-      "@c4c/ui": ["./src/app/ui"]
+      "@c4c/ui": ["./src/app/ui"],
+      "@c4c/layout": ["./src/app/layout"]
     }
   },
   "angularCompilerOptions": {
