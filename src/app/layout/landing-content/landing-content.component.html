@@ -9,17 +9,30 @@
   <section>
     <div class="container">
       <div class="text-center">
-        <h1 class="max-w-[700px] mx-auto">Tortor sed maecenas elementum</h1>
+        <h1 class="max-w-[700px] mx-auto">Superhuman Tutor</h1>
         <p class="max-w-[570px] mx-auto">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
-          turpis molestie, dictum est a, mattis tellus.
+          An Intelligent Tutoring System for Instructors and Learners
         </p>
       </div>
 
       <div class="grid grid-cols-1 text-center mt-14 md:grid-cols-2 gap-7">
-        <a
-          href="../dist/authoring-page.html"
-          class="relative flex flex-col items-center justify-center px-8 lg:px-20 py-12 min-h-[270px] overflow-hidden transition border-[2px] border-transparent border-solid rounded-xl hover:border-custom-green"
+        <app-tile-video
+          [link]="'/landing/authoring-page.html'"
+          [videoURL]="'/assets/videos/authoring-tool.mp4'"
+          [heading]="'Authoring tool'"
+          [paragraph]="'Content creation for instructors and institutions'"
+        ></app-tile-video>
+        <app-tile-video
+          [link]="'/landing/learn-js-python-page.html'"
+          [videoURL]="'/assets/videos/learn.mp4'"
+          [heading]="'Learn Javascript + Python'"
+          [paragraph]="
+            'Adaptive Learning Path for Beginners and Advanced Learners'
+          "
+        ></app-tile-video>
+        <!-- <a
+          routerLink="/landing/authoring-page.html"
+          class="cursor-pointer relative flex flex-col items-center justify-center px-8 lg:px-20 py-12 min-h-[270px] overflow-hidden transition border-[2px] border-transparent border-solid rounded-xl hover:border-custom-green"
         >
           <div class="absolute inset-0 -z-[10]">
             <div class="relative h-full overflow-hidden">
@@ -38,14 +51,11 @@
             </div>
           </div>
           <h4>Authoring tool</h4>
-          <p class="mb-0">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
-            turpis molestie, dictum est a, mattis tellus.
-          </p>
-        </a>
-        <a
-          href="../dist/learn-js-python-page.html"
-          class="relative flex flex-col items-center justify-center px-8 lg:px-20 py-12 min-h-[270px] overflow-hidden transition border-[2px] border-transparent border-solid rounded-xl hover:border-custom-blue"
+          <p class="mb-0">Content creation for instructors and institutions</p>
+        </a> -->
+        <!-- <a
+          routerLink="/landing/learn-js-python-page.html"
+          class="cursor-pointer relative flex flex-col items-center justify-center px-8 lg:px-20 py-12 min-h-[270px] overflow-hidden transition border-[2px] border-transparent border-solid rounded-xl hover:border-custom-blue"
         >
           <div class="absolute inset-0 -z-[10]">
             <div class="relative h-full overflow-hidden">
@@ -62,10 +72,9 @@
           </div>
           <h4>Learn <br />Javascript + Python</h4>
           <p class="mb-0">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
-            turpis molestie, dictum est a, mattis tellus.
+            Adaptive Learning Path for Beginners and Advanced Learners
           </p>
-        </a>
+        </a> -->
       </div>
     </div>
   </section>

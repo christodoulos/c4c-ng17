@@ -1,14 +1,17 @@
-<a href="" class="button button-outline button-video group">
+<a #button class="button button-outline button-video group">
   <div
     class="absolute inset-0 -z-[10] invisible opacity-0 transition-all group-hover:visible group-hover:opacity-100"
   >
     <div class="relative h-full overflow-hidden">
       <video
+        #video
         class="absolute object-cover w-full h-full -z-[10]"
         muted
         playsinline
         autoplay
         loop
+        (canplay)="video.play()"
+        (loadedmetadata)="video.muted = true"
       >
         <source src="/assets/videos/button.mp4" type="video/mp4" />
       </video>
