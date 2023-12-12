@@ -1,6 +1,6 @@
 import { SocialUser } from '@abacritt/angularx-social-login';
 import { createAction, props, createReducer, on, Store } from '@ngrx/store';
-import { AppState } from '@c4c/state';
+import { AppState } from 'src/app/state';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { inject } from '@angular/core';
 import { catchError, map, of, switchMap } from 'rxjs';

@@ -3,7 +3,7 @@ import { NavigationStart, Router } from '@angular/router';
 import { createAction, props, on, createReducer, Store } from '@ngrx/store';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { filter, map, tap } from 'rxjs';
-import { AppState } from '@c4c/state';
+import { AppState } from 'src/app/state';
 
 export interface RouteDataState {
   url: string;

@@ -2,12 +2,17 @@ import { Component } from '@angular/core';
 import {
   LandingNavigationComponent,
   LandingContentComponent,
-} from '@c4c/layout';
+  FooterComponent,
+} from 'src/app/layout';
 
 @Component({
-  selector: 'app-landing-layout',
+  selector: 'layout-landing-layout',
   standalone: true,
-  imports: [LandingNavigationComponent, LandingContentComponent],
+  imports: [
+    LandingNavigationComponent,
+    LandingContentComponent,
+    FooterComponent,
+  ],
   templateUrl: './landing-layout.component.html',
   styleUrl: './landing-layout.component.css',
 })

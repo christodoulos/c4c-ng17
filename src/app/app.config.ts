@@ -15,7 +15,6 @@ import {
 } from '@abacritt/angularx-social-login';
 import { JwtModule } from '@auth0/angular-jwt';
 
-import { routes } from './app.routes';
 import { provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { provideEffects } from '@ngrx/effects';
@@ -25,7 +24,8 @@ import {
   routeDataReducer,
   setRouteDataEffect,
   loginEffect,
-} from '@c4c/state';
+} from 'src/app/state';
+import { routes } from 'src/app/app.routes';
 
 export function tokenGetter() {
   return localStorage.getItem('access_token');

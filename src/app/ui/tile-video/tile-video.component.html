@@ -1,6 +1,10 @@
 <a
   [routerLink]="link"
-  class="cursor-pointer relative flex flex-col items-center justify-center px-8 lg:px-20 py-12 min-h-[270px] overflow-hidden transition border-[2px] border-transparent border-solid rounded-xl hover:border-custom-green"
+  class="cursor-pointer relative flex flex-col items-center justify-center px-8 lg:px-20 py-12 min-h-[270px] overflow-hidden transition border-[2px] border-transparent border-solid rounded-xl  {{
+    borderColor === 'green'
+      ? 'hover:border-custom-green'
+      : 'hover:border-custom-blue'
+  }}"
 >
   <div class="absolute inset-0 -z-[10]">
     <div class="relative h-full overflow-hidden">

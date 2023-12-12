@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UiBurgerIconComponent } from './ui-burger-icon.component';
+import { BurgerIconComponent } from './burger-icon.component';
 
-describe('UiBurgerIconComponent', () => {
-  let component: UiBurgerIconComponent;
-  let fixture: ComponentFixture<UiBurgerIconComponent>;
+describe('BurgerIconComponent', () => {
+  let component: BurgerIconComponent;
+  let fixture: ComponentFixture<BurgerIconComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [UiBurgerIconComponent]
+      imports: [BurgerIconComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(UiBurgerIconComponent);
+    fixture = TestBed.createComponent(BurgerIconComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

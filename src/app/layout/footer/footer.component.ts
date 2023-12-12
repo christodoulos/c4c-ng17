@@ -3,7 +3,7 @@ import {
   FacebookIconComponent,
   TwitterIconComponent,
   YoutubeIconComponent,
-} from '@c4c/ui';
+} from 'src/app/ui';
 
 @Component({
   selector: 'app-footer',

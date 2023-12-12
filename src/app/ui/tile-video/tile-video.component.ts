@@ -13,4 +13,5 @@ export class TileVideoComponent {
   @Input() videoURL = '';
   @Input() heading = '';
   @Input() paragraph = '';
+  @Input() borderColor = 'green';
 }

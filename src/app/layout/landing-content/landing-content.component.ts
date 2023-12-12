@@ -4,7 +4,7 @@ import { RouterLink } from '@angular/router';
 import { TileVideoComponent } from 'src/app/ui/tile-video/tile-video.component';
 
 @Component({
-  selector: 'app-landing-content',
+  selector: 'layout-landing-content',
   standalone: true,
   imports: [CommonModule, RouterLink, TileVideoComponent],
   templateUrl: './landing-content.component.html',
