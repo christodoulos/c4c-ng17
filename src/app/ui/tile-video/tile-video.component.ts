@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-tile-video',
+  selector: 'ui-tile-video',
   standalone: true,
   imports: [RouterLink],
   templateUrl: './tile-video.component.html',
