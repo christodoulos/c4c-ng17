@@ -6,13 +6,38 @@
       <a href="">
         <img src="/assets/logos/code4code.svg" alt="" />
       </a>
+      <ul class="hidden gap-8 mb-0 list-none lg:inline-flex">
+        <li class="mb-0">
+          <a
+            class="cursor-pointer transition hover:text-custom-green"
+            routerLink="/c4c/authoring"
+            >Authoring tool</a
+          >
+        </li>
+        <li class="mb-0">
+          <a
+            class="cursor-pointer transition hover:text-custom-green"
+            routerLink="/c4c/learning"
+            >Javascript + Python</a
+          >
+        </li>
+        <li class="mb-0">
+          <a
+            class="cursor-pointer transition hover:text-custom-green"
+            routerLink="/c4c/plans"
+            >Plans</a
+          >
+        </li>
+      </ul>
     </div>
 
     <div class="items-center hidden gap-4 lg:inline-flex">
       <asl-google-signin-button type="standard" size="large">
       </asl-google-signin-button>
 
-      <app-button-video #videoButton [text]="'Learn more'"></app-button-video>
+      <div class="inline-flex items-center gap-3 lg:hidden">
+        <ui-burger-icon></ui-burger-icon>
+      </div>
     </div>
 
     <!-- <div class="inline-flex items-center gap-3 lg:hidden">

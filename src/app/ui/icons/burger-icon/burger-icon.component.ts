@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-burger-icon',
+  selector: 'ui-burger-icon',
   standalone: true,
   imports: [],
   templateUrl: './burger-icon.component.html',
-  styleUrl: './burger-icon.component.css'
+  styleUrl: './burger-icon.component.css',
 })
-export class BurgerIconComponent {
-
-}
+export class BurgerIconComponent {}

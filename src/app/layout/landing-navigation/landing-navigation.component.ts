@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
 
-import { MenuItem } from 'src/app/interfaces/menu-item';
 import { ButtonVideoComponent, BurgerIconComponent } from 'src/app/ui';
 import { LandingNavigationMobileComponent } from 'src/app/layout/landing-navigation-mobile/landing-navigation-mobile.component';
 
@@ -11,6 +11,7 @@ import { LandingNavigationMobileComponent } from 'src/app/layout/landing-navigat
   standalone: true,
   imports: [
     CommonModule,
+    RouterLink,
     GoogleSigninButtonModule,
     ButtonVideoComponent,
     BurgerIconComponent,
@@ -19,7 +20,4 @@ import { LandingNavigationMobileComponent } from 'src/app/layout/landing-navigat
   templateUrl: './landing-navigation.component.html',
   styleUrl: './landing-navigation.component.css',
 })
-export class LandingNavigationComponent {
-  @Input() leftMenuItems: MenuItem[] = [];
-  @Input() rightMenuItems: MenuItem[] = [];
-}
+export class LandingNavigationComponent {}
