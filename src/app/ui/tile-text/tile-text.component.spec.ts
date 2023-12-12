@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UiTileComponent } from './ui-tile.component';
+import { TileTextComponent } from './tile-text.component';
 
-describe('UiTileComponent', () => {
-  let component: UiTileComponent;
-  let fixture: ComponentFixture<UiTileComponent>;
+describe('TileTextComponent', () => {
+  let component: TileTextComponent;
+  let fixture: ComponentFixture<TileTextComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [UiTileComponent]
+      imports: [TileTextComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(UiTileComponent);
+    fixture = TestBed.createComponent(TileTextComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
