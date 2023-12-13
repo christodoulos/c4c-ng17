@@ -5,6 +5,7 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { inject } from '@angular/core';
 import { catchError, map, of, switchMap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '@c4c/environment';
 
 // Auth State
 
@@ -72,8 +73,10 @@ export const loginEffect = createEffect(
       switchMap((action) =>
         http
           .post<{ access_token: string }>(
-            'http://localhost:6789/api/auth/google-login',
-            { idToken: action.user.idToken }
+            `${environment.apiUrl}/auth/google-login`,
+            {
+              idToken: action.user.idToken,
+            }
           )
           .pipe(
             map((res) => {

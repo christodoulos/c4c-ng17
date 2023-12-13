@@ -15,6 +15,7 @@ export class AuthService {
   constructor() {
     this.socialAuthService.authState.subscribe((user) => {
       if (user) {
+        console.log('User: ', user);
         this.store.dispatch(login({ user }));
       }
     });
