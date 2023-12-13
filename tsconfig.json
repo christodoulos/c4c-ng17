@@ -21,7 +21,8 @@
     "useDefineForClassFields": false,
     "lib": ["ES2022", "dom"],
     "paths": {
-      "@c4c/state": ["./src/app/state"]
+      "@c4c/state": ["./src/app/state"],
+      "@c4c/ui": ["./src/app/ui"]
     }
   },
   "angularCompilerOptions": {

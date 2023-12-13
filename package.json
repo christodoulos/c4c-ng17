@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "deploy": "c4c_frontend_deploy",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
