@@ -9,9 +9,7 @@ import {
 } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
-
-import { ButtonVideoComponent, BurgerIconComponent } from 'src/app/ui';
-import { LandingNavigationMobileComponent } from 'src/app/layout/landing-navigation-mobile/landing-navigation-mobile.component';
+import { ButtonVideoComponent } from '@c4c/ui';
 
 @Component({
   selector: 'layout-landing-navigation',
@@ -21,26 +19,17 @@ import { LandingNavigationMobileComponent } from 'src/app/layout/landing-navigat
     RouterLink,
     GoogleSigninButtonModule,
     ButtonVideoComponent,
-    BurgerIconComponent,
-    LandingNavigationMobileComponent,
   ],
   templateUrl: './landing-navigation.component.html',
   styleUrl: './landing-navigation.component.css',
 })
 export class LandingNavigationComponent implements AfterViewInit {
-  @ViewChild('mobileBurgerIcon') burgerIcon!: ElementRef;
   @ViewChild('mobileMenu') mobileMenu!: ElementRef;
-  @ViewChild('mobileBurgerCloseIcon') mobileBurgerIconClose!: ElementRef;
-  burgerIconRef!: ElementRef;
   mobileMenuRef!: ElementRef;
-  mobileBurgerIconCloseRef!: ElementRef;
-
   renderer = inject(Renderer2);
 
   ngAfterViewInit(): void {
-    this.burgerIconRef = this.burgerIcon.nativeElement;
     this.mobileMenuRef = this.mobileMenu.nativeElement;
-    this.mobileBurgerIconCloseRef = this.mobileBurgerIconClose.nativeElement;
   }
 
   onBurgerClick() {
