@@ -3,20 +3,29 @@ import { createAction, props, createReducer, on, Store } from '@ngrx/store';
 import { AppState } from 'src/app/state';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { inject } from '@angular/core';
-import { catchError, map, of, switchMap } from 'rxjs';
+import { catchError, map, of, switchMap, tap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '@c4c/environment';
+import { Router } from '@angular/router';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 // Auth State
 
 export interface AuthState {
   loggedIn: boolean;
-  user: SocialUser | null;
+  id?: string;
+  email?: string;
+  name?: string;
+  firstName?: string;
+  lastName?: string;
+  photoUrl?: string;
+  category?: string;
+  institution?: string;
+  linkedin?: string;
 }
 
 export const authInitialState: AuthState = {
   loggedIn: false,
-  user: null,
 };
 
 // Auth Actions
@@ -28,7 +37,7 @@ export const login = createAction(
 
 export const loginSuccess = createAction(
   '[Auth] Login Success',
-  props<{ user: SocialUser }>()
+  props<{ user: AuthState }>()
 );
 
 export const loginFailure = createAction(
@@ -38,12 +47,17 @@ export const loginFailure = createAction(
 
 export const logout = createAction('[Auth] Logout');
 
+export const registerUser = createAction(
+  '[Auth] Register User',
+  props<{ user: AuthState }>()
+);
+
 // Auth Reducer
 
 export const authReducer = createReducer(
   authInitialState,
-  on(loginSuccess, (state, { user }) => ({ loggedIn: true, user })),
-  on(logout, (state) => ({ loggedIn: false, user: null }))
+  on(loginSuccess, (_, { user }) => ({ ...user })),
+  on(logout, (_) => ({ loggedIn: false }))
 );
 
 // Auth Selectors
@@ -52,13 +66,25 @@ export const selectAuthState = (state: AppState) => state.auth;
 
 export const loggedIn = (state: AppState) => state.auth.loggedIn;
 
-export const user = (state: AppState) => state.auth.user;
+export const id = (state: AppState) => state.auth.id;
 
-export const name = (state: AppState) => state.auth.user?.name;
+export const email = (state: AppState) => state.auth.email;
 
-export const email = (state: AppState) => state.auth.user?.email;
+export const name = (state: AppState) => state.auth.name;
 
-export const photoUrl = (state: AppState) => state.auth.user?.photoUrl;
+export const firstName = (state: AppState) => state.auth.firstName;
+
+export const lastName = (state: AppState) => state.auth.lastName;
+
+export const photoUrl = (state: AppState) => state.auth.photoUrl;
+
+export const category = (state: AppState) => state.auth.category;
+
+export const institution = (state: AppState) => state.auth.institution;
+
+export const linkedin = (state: AppState) => state.auth.linkedin;
+
+export const isNewUser = (state: AppState) => state.auth.category === null;
 
 // Auth Effects
 
@@ -66,7 +92,7 @@ export const loginEffect = createEffect(
   (
     actions$ = inject(Actions),
     http = inject(HttpClient),
-    store = inject(Store<AppState>)
+    jwtHelperService = inject(JwtHelperService)
   ) => {
     return actions$.pipe(
       ofType(login),
@@ -81,7 +107,10 @@ export const loginEffect = createEffect(
           .pipe(
             map((res) => {
               localStorage.setItem('access_token', res.access_token);
-              return loginSuccess({ user: action.user });
+              const userFromToken = jwtHelperService.decodeToken(
+                res.access_token
+              ).user as AuthState;
+              return loginSuccess({ user: userFromToken });
             }),
             catchError(() =>
               of(loginFailure({ error: 'Google login failure' }))
@@ -91,4 +120,21 @@ export const loginEffect = createEffect(
     );
   },
   { functional: true }
+);
+
+export const loginSuccessEffect = createEffect(
+  (actions$ = inject(Actions), router = inject(Router)) => {
+    return actions$.pipe(
+      ofType(loginSuccess),
+      map((action) => action.user.category !== null),
+      tap((isNewUser) => {
+        if (isNewUser) {
+          router.navigateByUrl('/c4c/register');
+        } else {
+          router.navigateByUrl('/c4c/user/dashboard');
+        }
+      })
+    );
+  },
+  { dispatch: false, functional: true }
 );

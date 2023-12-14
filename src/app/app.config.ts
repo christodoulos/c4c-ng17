@@ -24,6 +24,7 @@ import {
   routeDataReducer,
   setRouteDataEffect,
   loginEffect,
+  loginSuccessEffect,
 } from 'src/app/state';
 import { routes } from 'src/app/app.routes';
 
@@ -61,6 +62,6 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(withFetch(), withInterceptorsFromDi()),
     provideStore({ auth: authReducer, routeData: routeDataReducer }),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
-    provideEffects([{ setRouteDataEffect, loginEffect }]),
+    provideEffects([{ setRouteDataEffect, loginEffect, loginSuccessEffect }]),
   ],
 };
