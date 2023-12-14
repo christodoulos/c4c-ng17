@@ -3,7 +3,7 @@ import {
   LandingNavigationComponent,
   LandingContentComponent,
   FooterComponent,
-} from 'src/app/layout';
+} from '@c4c/layout';
 
 @Component({
   selector: 'layout-landing-layout',

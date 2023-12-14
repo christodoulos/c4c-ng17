@@ -26,7 +26,9 @@
       "@c4c/guards": ["./src/app/guards"],
       "@c4c/services": ["./src/app/services"],
       "@c4c/interfaces": ["./src/app/interfaces"],
-      "@c4c/ui": ["./src/app/ui"]
+      "@c4c/ui": ["./src/app/ui"],
+      "@c4c/layout": ["./src/app/layout"],
+      "@c4c/student": ["./src/app/student"]
     }
   },
   "angularCompilerOptions": {

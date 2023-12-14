@@ -138,12 +138,12 @@ export const loginSuccessEffect = createEffect(
   (actions$ = inject(Actions), router = inject(Router)) => {
     return actions$.pipe(
       ofType(loginSuccess),
-      map((action) => !action.user.category),
-      tap((isNewUser) => {
-        if (isNewUser) {
+      map((action) => action.user.category),
+      tap((userCategory) => {
+        if (!userCategory) {
           router.navigateByUrl('/c4c/register');
         } else {
-          router.navigateByUrl('/c4c/user/dashboard');
+          router.navigateByUrl(`/c4c/${userCategory}/dashboard`);
         }
       })
     );
@@ -168,6 +168,7 @@ export const registerUserEffect = createEffect(
           .pipe(
             map((res) => registerUserSuccess({ user: res })),
             catchError(() => of(loginFailure({ error: 'Register failure' }))),
+            tap((user) => console.log(user)),
             tap(() => router.navigateByUrl('/c4c/user/dashboard'))
           )
       )
