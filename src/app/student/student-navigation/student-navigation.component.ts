@@ -28,6 +28,7 @@ export class StudentNavigationComponent {
   }
 
   onBurgerClick() {
+    console.log('burger clicked');
     this.renderer.removeClass(this.mobileMenuRef, 'hidden');
   }
 

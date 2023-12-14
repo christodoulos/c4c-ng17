@@ -61,7 +61,11 @@
     </ul>
 
     <!-- Burger Icon -->
-    <div class="block cursor-pointer lg:hidden" id="mobile-burger-icon">
+    <div
+      class="block cursor-pointer lg:hidden"
+      id="mobile-burger-icon"
+      (click)="onBurgerClick()"
+    >
       <svg
         width="69"
         height="12"
@@ -87,11 +91,12 @@
     <!-- Mobile Devices Menu -->
     <ul
       #mobileMenu
-      class="z-[999] text-center fixed top-0 flex flex-col flex-wrap items-center justify-center w-screen h-screen gap-7 mb-0 list-none transition-all -right-[120%] lg:hidden bg-custom-gray-800"
+      class="z-[999] hidden text-center fixed top-0 right-0 flex flex-col flex-wrap items-center justify-center w-screen h-screen gap-7 mb-0 list-none transition-all bg-custom-gray-800"
       id="mobile-menu"
     >
       <!-- Burger Close Icon -->
       <div
+        (click)="onBurgerIconCloseClick()"
         class="absolute cursor-pointer top-7 right-5"
         id="mobile-burger-close-icon"
       >
