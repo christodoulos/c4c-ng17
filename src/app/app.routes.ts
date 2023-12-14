@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 
-import { registerGuardGuard } from './guards';
+import { registerGuard } from './guards';
 
 import { LandingLayoutComponent } from './layout/landing-layout/landing-layout.component';
 import { LandingAuthoringToolComponent } from './layout/landing-authoring-tool/landing-authoring-tool.component';
@@ -16,7 +16,7 @@ export const routes: Routes = [
   {
     path: 'c4c/register',
     component: LandingRegisterComponent,
-    canActivate: [registerGuardGuard],
+    canActivate: [registerGuard],
   },
   { path: '', redirectTo: 'c4c', pathMatch: 'full' },
 ];

@@ -1,1 +1,1 @@
-export * from './register-guard.guard';
+export * from './register.guard';

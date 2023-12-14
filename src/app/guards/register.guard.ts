@@ -4,7 +4,7 @@ import { AppState, loggedIn } from '@c4c/state';
 import { Store } from '@ngrx/store';
 import { map } from 'rxjs';
 
-export const registerGuardGuard: CanActivateFn = (route, state) => {
+export const registerGuard: CanActivateFn = (route, state) => {
   const store = inject(Store<AppState>);
   const router = inject(Router);
   return store.select(loggedIn).pipe(
