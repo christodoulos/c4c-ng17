@@ -3,3 +3,4 @@ export * from './profile';
 export * from './user-evaluation';
 export * from './trainee-report';
 export * from './menu-item';
+export * from './user';

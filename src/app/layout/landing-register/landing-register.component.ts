@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { User } from '@c4c/interfaces';
+import { AppState, registerUser } from '@c4c/state';
+
 import { LandingNavigationComponent } from '../landing-navigation/landing-navigation.component';
 import { LandingRegisterFormComponent } from '../landing-register-form/landing-register-form.component';
 import { FooterComponent } from '../footer/footer.component';
@@ -14,4 +18,10 @@ import { FooterComponent } from '../footer/footer.component';
   templateUrl: './landing-register.component.html',
   styleUrl: './landing-register.component.css',
 })
-export class LandingRegisterComponent {}
+export class LandingRegisterComponent {
+  store = inject(Store<AppState>);
+
+  onRegisteredUser(user: Partial<User>) {
+    this.store.dispatch(registerUser({ user }));
+  }
+}

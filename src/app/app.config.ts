@@ -25,6 +25,7 @@ import {
   setRouteDataEffect,
   loginEffect,
   loginSuccessEffect,
+  registerUserEffect,
 } from 'src/app/state';
 import { routes } from 'src/app/app.routes';
 
@@ -34,6 +35,7 @@ export function tokenGetter() {
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    provideHttpClient(withFetch(), withInterceptorsFromDi()),
     provideRouter(routes),
     {
       provide: 'SocialAuthServiceConfig',
@@ -56,12 +58,19 @@ export const appConfig: ApplicationConfig = {
       JwtModule.forRoot({
         config: {
           tokenGetter: tokenGetter,
+          allowedDomains: ['localhost:6789'],
         },
       })
     ),
-    provideHttpClient(withFetch(), withInterceptorsFromDi()),
     provideStore({ auth: authReducer, routeData: routeDataReducer }),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
-    provideEffects([{ setRouteDataEffect, loginEffect, loginSuccessEffect }]),
+    provideEffects([
+      {
+        setRouteDataEffect,
+        loginEffect,
+        loginSuccessEffect,
+        registerUserEffect,
+      },
+    ]),
   ],
 };

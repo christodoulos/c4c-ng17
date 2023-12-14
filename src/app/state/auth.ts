@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '@c4c/environment';
 import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { User } from '../interfaces/user';
 
 // Auth State
 
@@ -49,15 +50,26 @@ export const logout = createAction('[Auth] Logout');
 
 export const registerUser = createAction(
   '[Auth] Register User',
-  props<{ user: AuthState }>()
+  props<{ user: User }>()
+);
+
+export const registerUserSuccess = createAction(
+  '[Auth] Register User Success',
+  props<{ user: User }>()
+);
+
+export const registerUserFailure = createAction(
+  '[Auth] Register User Failure',
+  props<{ error: string }>()
 );
 
 // Auth Reducer
 
 export const authReducer = createReducer(
   authInitialState,
-  on(loginSuccess, (_, { user }) => ({ ...user })),
-  on(logout, (_) => ({ loggedIn: false }))
+  on(loginSuccess, (state, { user }) => ({ ...state, ...user })),
+  on(logout, (_) => ({ loggedIn: false })),
+  on(registerUserSuccess, (state, { user }) => ({ ...state, ...user }))
 );
 
 // Auth Selectors
@@ -126,7 +138,7 @@ export const loginSuccessEffect = createEffect(
   (actions$ = inject(Actions), router = inject(Router)) => {
     return actions$.pipe(
       ofType(loginSuccess),
-      map((action) => action.user.category !== null),
+      map((action) => !action.user.category),
       tap((isNewUser) => {
         if (isNewUser) {
           router.navigateByUrl('/c4c/register');
@@ -137,4 +149,29 @@ export const loginSuccessEffect = createEffect(
     );
   },
   { dispatch: false, functional: true }
+);
+
+export const registerUserEffect = createEffect(
+  (
+    actions$ = inject(Actions),
+    http = inject(HttpClient),
+    router = inject(Router)
+  ) => {
+    return actions$.pipe(
+      ofType(registerUser),
+      map((action) => action.user),
+      switchMap((user) =>
+        http
+          .post<AuthState>(`${environment.apiUrl}/user/register`, {
+            ...user,
+          })
+          .pipe(
+            map((res) => registerUserSuccess({ user: res })),
+            catchError(() => of(loginFailure({ error: 'Register failure' }))),
+            tap(() => router.navigateByUrl('/c4c/user/dashboard'))
+          )
+      )
+    );
+  },
+  { functional: true }
 );
