@@ -2,7 +2,7 @@
   <div
     class="flex flex-wrap justify-between mx-auto max-w-[1820px] px-5 gap-5 items-center"
   >
-    <a href="">
+    <a href="javascript:void(0)">
       <img src="/assets/logos/code4code.svg" alt="" />
     </a>
 
@@ -11,50 +11,86 @@
       class="flex-wrap items-center hidden gap-10 mb-0 list-none lg:inline-flex"
     >
       <li class="mb-0">
-        <a href="" class="transition hover:text-custom-green">Home</a>
+        <a href="javascript:void(0)" class="transition hover:text-custom-green"
+          >Home</a
+        >
       </li>
       <li class="relative mb-0 group">
-        <a href="" class="transition hover:text-custom-green">Products</a>
+        <a href="javascript:void(0)" class="transition hover:text-custom-green"
+          >Products</a
+        >
         <ul
           class="absolute flex-col hidden gap-3 px-8 py-5 mb-0 list-none -translate-x-1/2 rounded-lg group-hover:inline-flex bg-custom-gray-800 top-6 left-1/2 w-max drop-shadow-custom-shadow"
         >
           <li class="mb-0">
-            <a href="" class="transition hover:text-custom-green">Number 1</a>
+            <a
+              href="javascript:void(0)"
+              class="transition hover:text-custom-green"
+              >Number 1</a
+            >
           </li>
           <li class="mb-0">
-            <a href="" class="transition hover:text-custom-green">Number 2</a>
+            <a
+              href="javascript:void(0)"
+              class="transition hover:text-custom-green"
+              >Number 2</a
+            >
           </li>
           <li class="mb-0">
-            <a href="" class="transition hover:text-custom-green">Number 3</a>
+            <a
+              href="javascript:void(0)"
+              class="transition hover:text-custom-green"
+              >Number 3</a
+            >
           </li>
         </ul>
       </li>
       <li class="mb-0">
-        <a href="" class="transition hover:text-custom-green">Tools</a>
+        <a href="javascript:void(0)" class="transition hover:text-custom-green"
+          >Tools</a
+        >
       </li>
       <li class="relative mb-0 group">
-        <a href="">
+        <a href="javascript:void(0)">
           <img
             style="width: 30px; height: 30px"
             class="rounded-full object-cover"
             src="{{ photoUrl$ | async }}"
             alt="User Photo"
+            (error)="onImageError($event)"
           />
         </a>
         <ul
           class="absolute flex-col hidden gap-3 px-8 py-5 mb-0 list-none rounded-lg -right-2 group-hover:inline-flex bg-custom-gray-800 top-6 w-max drop-shadow-custom-shadow"
         >
           <li class="mb-0">
-            <a href="" class="transition hover:text-custom-green">Profile</a>
+            <a
+              href="javascript:void(0)"
+              class="transition hover:text-custom-green"
+              >Profile</a
+            >
           </li>
           <li class="mb-0">
-            <a href="" class="transition hover:text-custom-green">Account</a>
+            <a
+              href="javascript:void(0)"
+              class="transition hover:text-custom-green"
+              >Account</a
+            >
           </li>
           <li class="mb-0">
-            <a href="" class="transition hover:text-custom-green">Help</a>
+            <a
+              href="javascript:void(0)"
+              class="transition hover:text-custom-green"
+              >Help</a
+            >
           </li>
           <li class="mb-0">
-            <a href="" class="transition hover:text-custom-green">Log out</a>
+            <a
+              (click)="logout()"
+              href="javascript:void(0)"
+              class="transition hover:text-custom-green"
+              >Log out</a
+            >
           </li>
         </ul>
       </li>
@@ -123,7 +159,9 @@
       </div>
 
       <li class="mb-0 text-[25px]">
-        <a href="" class="transition hover:text-custom-green">Home</a>
+        <a href="javascript:void(0)" class="transition hover:text-custom-green"
+          >Home</a
+        >
       </li>
       <li class="relative mb-0 group parent-menu" aria-expanded="false">
         <a class="cursor-pointer transition hover:text-custom-green text-[25px]"
@@ -133,44 +171,76 @@
           class="flex flex-col gap-2 py-0 mb-0 overflow-hidden list-none transition-all opacity-0 sub-menu max-h-0"
         >
           <li class="mb-0">
-            <a href="" class="transition hover:text-custom-green">Number 1</a>
+            <a
+              href="javascript:void(0)"
+              class="transition hover:text-custom-green"
+              >Number 1</a
+            >
           </li>
           <li class="mb-0">
-            <a href="" class="transition hover:text-custom-green">Number 2</a>
+            <a
+              href="javascript:void(0)"
+              class="transition hover:text-custom-green"
+              >Number 2</a
+            >
           </li>
           <li class="mb-0">
-            <a href="" class="transition hover:text-custom-green">Number 3</a>
+            <a
+              href="javascript:void(0)"
+              class="transition hover:text-custom-green"
+              >Number 3</a
+            >
           </li>
         </ul>
       </li>
       <li class="mb-0">
-        <a href="" class="transition hover:text-custom-green text-[25px]"
+        <a
+          href="javascript:void(0)"
+          class="transition hover:text-custom-green text-[25px]"
           >Tools</a
         >
       </li>
-      <li class="relative mb-0 group parent-menu" aria-expanded="false">
-        <a class="cursor-pointer">
+      <li class="relative mb-0 group parent-menu" aria-expanded="true">
+        <a class="cursor-pointer flex justify-center">
           <img
             style="width: 30px; height: 30px"
             class="rounded-full object-cover"
             src="{{ photoUrl$ | async }}"
             alt="User Photo"
+            (error)="onImageError($event)"
           />
         </a>
         <ul
-          class="flex flex-col gap-2 py-0 mb-0 overflow-hidden list-none transition-all opacity-0 sub-menu max-h-0"
+          class="group-hover:inline-flex flex flex-col gap-2 py-0 mb-0 hidden list-none transition-all opacity-100 sub-menu max-h-min"
         >
           <li class="mb-0">
-            <a href="" class="transition hover:text-custom-green">Profile</a>
+            <a
+              href="javascript:void(0)"
+              class="transition hover:text-custom-green"
+              >Profile</a
+            >
           </li>
           <li class="mb-0">
-            <a href="" class="transition hover:text-custom-green">Account</a>
+            <a
+              href="javascript:void(0)"
+              class="transition hover:text-custom-green"
+              >Account</a
+            >
           </li>
           <li class="mb-0">
-            <a href="" class="transition hover:text-custom-green">Help</a>
+            <a
+              href="javascript:void(0)"
+              class="transition hover:text-custom-green"
+              >Help</a
+            >
           </li>
           <li class="mb-0">
-            <a href="" class="transition hover:text-custom-green">Log out</a>
+            <a
+              (click)="logout()"
+              href="javascript:void(0)"
+              class="transition hover:text-custom-green"
+              >Log out</a
+            >
           </li>
         </ul>
       </li>

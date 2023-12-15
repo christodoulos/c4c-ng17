@@ -24,6 +24,7 @@ import {
   routeDataReducer,
   setRouteDataEffect,
   loginEffect,
+  logoutEffect,
   loginSuccessEffect,
   registerUserEffect,
 } from 'src/app/state';
@@ -68,6 +69,7 @@ export const appConfig: ApplicationConfig = {
       {
         setRouteDataEffect,
         loginEffect,
+        logoutEffect,
         loginSuccessEffect,
         registerUserEffect,
       },

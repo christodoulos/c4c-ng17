@@ -1,4 +1,4 @@
-import { SocialUser } from '@abacritt/angularx-social-login';
+import { SocialAuthService, SocialUser } from '@abacritt/angularx-social-login';
 import { createAction, props, createReducer, on, Store } from '@ngrx/store';
 import { AppState } from 'src/app/state';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
@@ -132,6 +132,24 @@ export const loginEffect = createEffect(
     );
   },
   { functional: true }
+);
+
+export const logoutEffect = createEffect(
+  (
+    actions$ = inject(Actions),
+    socialAuthService = inject(SocialAuthService),
+    router = inject(Router)
+  ) => {
+    return actions$.pipe(
+      ofType(logout),
+      tap(() => {
+        socialAuthService.signOut();
+        localStorage.removeItem('access_token');
+        router.navigate(['']);
+      })
+    );
+  },
+  { dispatch: false, functional: true }
 );
 
 export const loginSuccessEffect = createEffect(

@@ -6,7 +6,7 @@ import {
   inject,
 } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { AppState, photoUrl } from '@c4c/state';
+import { AppState, photoUrl, logout } from '@c4c/state';
 import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-student-navigation',
@@ -34,5 +34,13 @@ export class StudentNavigationComponent {
 
   onBurgerIconCloseClick() {
     this.renderer.addClass(this.mobileMenuRef, 'hidden');
+  }
+
+  logout() {
+    this.store.dispatch(logout());
+  }
+
+  onImageError(event: any) {
+    event.target.src = '/assets/icons/user-account.svg';
   }
 }
