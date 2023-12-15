@@ -185,9 +185,10 @@ export const registerUserEffect = createEffect(
           })
           .pipe(
             map((res) => registerUserSuccess({ user: res })),
-            catchError(() => of(loginFailure({ error: 'Register failure' }))),
-            tap((user) => console.log(user)),
-            tap(() => router.navigateByUrl('/c4c/user/dashboard'))
+            tap((action) =>
+              router.navigateByUrl(`/c4c/${action.user.category}/dashboard`)
+            ),
+            catchError(() => of(loginFailure({ error: 'Register failure' })))
           )
       )
     );
